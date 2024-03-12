@@ -1,2 +1,4 @@
+OplusCamera.apk filter=lfs diff=lfs merge=lfs -text
+libarcsoft*.so filter=lfs diff=lfs merge=lfs -text
 avalon/blobs/proprietary/system_ext/priv-app/OppoGallery2/OppoGallery2.apk filter=lfs diff=lfs merge=lfs -text
 audi/blobs/proprietary/system_ext/priv-app/OppoGallery2/OppoGallery2.apk filter=lfs diff=lfs merge=lfs -text
