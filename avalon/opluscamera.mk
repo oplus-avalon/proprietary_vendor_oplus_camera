@@ -3,6 +3,7 @@ LOCAL_PATH := vendor/oplus/camera/avalon
 # Blob dependencies
 PRODUCT_PACKAGES += \
     android.hardware.graphics.common-V3-ndk.vendor \
+    CameraThemedIcon \
     OnePlusGalleryTarget
 
 # Framework

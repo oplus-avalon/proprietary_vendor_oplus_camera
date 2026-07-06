@@ -2,5 +2,5 @@
     package="com.oneplus.gallery.overlay"
     android:versionCode="1"
     android:versionName="1.0">
-    <overlay android:targetName="Photos" android:targetPackage="com.oneplus.gallery" android:isStatic="true" />
+    <overlay android:targetPackage="com.oneplus.gallery" android:isStatic="true" />
 </manifest>
