@@ -85,16 +85,16 @@ on property:sys.camera.user.removed=*
 }  # fmt: skip
 
 namespace_imports = [
-    'vendor/oplus/camera/giulia/blobs',
-    'vendor/oneplus/giulia',
+    'vendor/oplus/camera/avalon/blobs',
+    'vendor/oneplus/avalon',
     'vendor/oneplus/sm8650-common',
     'hardware/oplus',
 ]
 
 module = ExtractUtilsModule(
     'blobs',
-    'oplus/camera/giulia',
-    device_rel_path='vendor/oplus/camera/giulia',
+    'oplus/camera/avalon',
+    device_rel_path='vendor/oplus/camera/avalon',
     blob_fixups=blob_fixups,
     lib_fixups=lib_fixups,
     namespace_imports=namespace_imports,
