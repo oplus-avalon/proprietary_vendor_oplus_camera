@@ -1,0 +1,54 @@
+diff --git a/smali/f6/l0.smali b/smali/f6/l0.smali
+index 95c2dd1d..451c1c62 100644
+--- a/smali/f6/l0.smali
++++ b/smali/f6/l0.smali
+@@ -3313,48 +3313,10 @@
+ .end method
+ 
+ .method public static l(Ljava/lang/String;)Z
+-    .locals 2
+-
+-    .line 1
+-    invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+-
+-    .line 2
+-    .line 3
+-    .line 4
+-    move-result v0
+-
+-    .line 5
+-    if-eqz v0, :cond_0
++    .locals 0
+ 
+-    .line 6
+-    .line 7
+     const/4 p0, 0x0
+ 
+-    .line 8
+-    return p0
+-
+-    .line 9
+-    :cond_0
+-    invoke-static {}, Lcom/oplus/app/OPlusAccessControlManager;->getInstance()Lcom/oplus/app/OPlusAccessControlManager;
+-
+-    .line 10
+-    .line 11
+-    .line 12
+-    move-result-object v0
+-
+-    .line 13
+-    sget v1, Lcom/oplus/app/OPlusAccessControlManager;->USER_CURRENT:I
+-
+-    .line 14
+-    .line 15
+-    invoke-virtual {v0, p0, v1}, Lcom/oplus/app/OPlusAccessControlManager;->isEncryptedPackage(Ljava/lang/String;I)Z
+-
+-    .line 16
+-    .line 17
+-    .line 18
+-    move-result p0
+-
+-    .line 19
+     return p0
+ .end method
+ 
