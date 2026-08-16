@@ -1,248 +1,364 @@
-From 009037a22da57a0f170711047e93359ee026b143 Mon Sep 17 00:00:00 2001
-From: Hecheng Yu <kde-yyds@qq.com>
-Date: Thu, 11 Jun 2026 14:44:06 +0800
-Subject: [PATCH] manifest: Get rid of oplus permissions
-
----
- AndroidManifest.xml | 66 ++++++++++++++++++++++-----------------------
- 1 file changed, 33 insertions(+), 33 deletions(-)
-
 diff --git a/AndroidManifest.xml b/AndroidManifest.xml
-index 11329a0..c1f649e 100644
+index ddc9f9e22..c13a85e87 100644
 --- a/AndroidManifest.xml
 +++ b/AndroidManifest.xml
-@@ -261,7 +261,7 @@
-             <meta-data android:name="com.android.keyguard.layout" android:resource="@layout/start_fake_layout"/>
-             <meta-data android:name="com.android.keyguard.layout.none.fold.remap" android:resource="@layout/start_fake_layout_none_fold_remap"/>
-         </activity>
--        <activity android:clearTaskOnLaunch="true" android:configChanges="mcc|mnc|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize" android:exported="true" android:label="@string/camera_app_name" android:launchMode="singleTop" android:name="com.oplus.camera.component.CameraOplusImageActivity" android:permission="com.oplus.permission.safe.KEY_EVENT" android:relinquishTaskIdentity="true" android:resizeableActivity="false" android:screenOrientation="behind" android:taskAffinity="com.oplus.camera" android:theme="@style/ThemeCamera" android:visibleToInstantApps="true" android:windowSoftInputMode="stateAlwaysHidden|adjustPan">
-+        <activity android:clearTaskOnLaunch="true" android:configChanges="mcc|mnc|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize" android:exported="true" android:label="@string/camera_app_name" android:launchMode="singleTop" android:name="com.oplus.camera.component.CameraOplusImageActivity" android:relinquishTaskIdentity="true" android:resizeableActivity="false" android:screenOrientation="behind" android:taskAffinity="com.oplus.camera" android:theme="@style/ThemeCamera" android:visibleToInstantApps="true" android:windowSoftInputMode="stateAlwaysHidden|adjustPan">
-             <intent-filter>
-                 <action android:name="oplus.media.action.STILL_IMAGE_CAMERA"/>
-                 <category android:name="android.intent.category.DEFAULT"/>
-@@ -270,7 +270,7 @@
-             <meta-data android:name="com.android.keyguard.layout" android:resource="@layout/start_fake_layout"/>
-             <meta-data android:name="com.android.keyguard.layout.none.fold.remap" android:resource="@layout/start_fake_layout_none_fold_remap"/>
-         </activity>
--        <activity android:clearTaskOnLaunch="true" android:configChanges="mcc|mnc|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale" android:exported="true" android:label="@string/camera_app_name" android:launchMode="singleTop" android:name="com.oplus.camera.component.OplusCameraActivity" android:permission="com.oplus.permission.safe.KEY_EVENT" android:resizeableActivity="false" android:screenOrientation="behind" android:showWhenLocked="true" android:taskAffinity="com.oplus.camera" android:theme="@style/ThemeCamera.FullScreen" android:visibleToInstantApps="true" android:windowSoftInputMode="stateAlwaysHidden|adjustPan">
-+        <activity android:clearTaskOnLaunch="true" android:configChanges="mcc|mnc|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale" android:exported="true" android:label="@string/camera_app_name" android:launchMode="singleTop" android:name="com.oplus.camera.component.OplusCameraActivity" android:resizeableActivity="false" android:screenOrientation="behind" android:showWhenLocked="true" android:taskAffinity="com.oplus.camera" android:theme="@style/ThemeCamera.FullScreen" android:visibleToInstantApps="true" android:windowSoftInputMode="stateAlwaysHidden|adjustPan">
-             <intent-filter>
-                 <action android:name="oplus.media.action.STILL_IMAGE_CAMERA_SECURE"/>
-                 <category android:name="android.intent.category.DEFAULT"/>
-@@ -282,7 +282,7 @@
-                 <category android:name="android.intent.category.DEFAULT"/>
-             </intent-filter>
-         </activity>
--        <activity android:configChanges="keyboardHidden|orientation|screenLayout|uiMode|screenSize" android:enabled="true" android:excludeFromRecents="true" android:exported="true" android:name="com.oplus.camera.setting.CameraMagHandleEntryActivity" android:permission="com.oplus.camera.permission.ENTRY_SETTING" android:screenOrientation="behind" android:showWhenLocked="false" android:theme="@style/AppNoTitleTheme.PreferenceFragment.FullScreen" android:windowSoftInputMode="adjustResize">
-+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|uiMode|screenSize" android:enabled="true" android:excludeFromRecents="true" android:exported="true" android:name="com.oplus.camera.setting.CameraMagHandleEntryActivity" android:screenOrientation="behind" android:showWhenLocked="false" android:theme="@style/AppNoTitleTheme.PreferenceFragment.FullScreen" android:windowSoftInputMode="adjustResize">
-             <intent-filter>
-                 <action android:name="oplus.intent.action.APP_MAG_HANDLE_SETTING"/>
-                 <category android:name="android.intent.category.DEFAULT"/>
-@@ -300,21 +300,21 @@
-                 <category android:name="android.intent.category.DEFAULT"/>
-             </intent-filter>
-         </activity>
--        <activity android:configChanges="keyboardHidden|orientation|screenLayout|uiMode|screenSize" android:exported="false" android:launchMode="singleTop" android:name="com.oplus.camera.setting.ApsConfigSetActivity" android:permission="oplus.permission.OPLUS_COMPONENT_SAFE" android:resizeableActivity="true" android:screenOrientation="behind" android:showWhenLocked="true" android:theme="@style/AppNoTitleTheme.PreferenceFragment">
-+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|uiMode|screenSize" android:exported="false" android:launchMode="singleTop" android:name="com.oplus.camera.setting.ApsConfigSetActivity" android:resizeableActivity="true" android:screenOrientation="behind" android:showWhenLocked="true" android:theme="@style/AppNoTitleTheme.PreferenceFragment">
-             <intent-filter>
-                 <action android:name="oplus.intent.action.APS_CONFIG_SET"/>
-                 <category android:name="android.intent.category.DEFAULT"/>
-             </intent-filter>
-             <meta-data android:name="com.android.settings.APP_PRIORITY" android:value="30010"/>
-         </activity>
--        <activity android:configChanges="keyboardHidden|orientation|screenLayout|uiMode|screenSize" android:exported="false" android:launchMode="singleTop" android:name="com.oplus.camera.setting.HALConfigSetActivity" android:permission="oplus.permission.OPLUS_COMPONENT_SAFE" android:resizeableActivity="true" android:screenOrientation="behind" android:showWhenLocked="true" android:theme="@style/AppNoTitleTheme.PreferenceFragment">
-+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|uiMode|screenSize" android:exported="false" android:launchMode="singleTop" android:name="com.oplus.camera.setting.HALConfigSetActivity" android:resizeableActivity="true" android:screenOrientation="behind" android:showWhenLocked="true" android:theme="@style/AppNoTitleTheme.PreferenceFragment">
-             <intent-filter>
-                 <action android:name="oplus.intent.action.HAL_CONFIG_SET"/>
-                 <category android:name="android.intent.category.DEFAULT"/>
-             </intent-filter>
-             <meta-data android:name="com.android.settings.APP_PRIORITY" android:value="30010"/>
-         </activity>
--        <activity android:configChanges="keyboardHidden|orientation|screenLayout|uiMode|screenSize" android:exported="false" android:launchMode="singleTop" android:name="com.oplus.camera.algovisualization.autocapture.AutoQuickCaptureSettingActivity" android:permission="oplus.permission.OPLUS_COMPONENT_SAFE" android:resizeableActivity="true" android:screenOrientation="behind" android:showWhenLocked="true" android:theme="@style/AppNoTitleTheme.PreferenceFragment">
-+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|uiMode|screenSize" android:exported="false" android:launchMode="singleTop" android:name="com.oplus.camera.algovisualization.autocapture.AutoQuickCaptureSettingActivity" android:resizeableActivity="true" android:screenOrientation="behind" android:showWhenLocked="true" android:theme="@style/AppNoTitleTheme.PreferenceFragment">
-             <intent-filter>
-                 <action android:name="oplus.intent.action.AUTO_QUICK_CAPTURE_SET"/>
-                 <category android:name="android.intent.category.DEFAULT"/>
-@@ -329,32 +329,32 @@
-             <meta-data android:name="com.android.settings.APP_PRIORITY" android:value="30010"/>
-         </activity>
-         <activity android:configChanges="mcc|mnc|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale" android:exported="false" android:launchMode="singleTop" android:name="com.oplus.camera.setting.ScreenOffActivity" android:resizeableActivity="false" android:screenOrientation="behind" android:showWhenLocked="true" android:taskAffinity="com.oplus.camera" android:theme="@style/ThemeCamera.FullScreen" android:windowSoftInputMode="stateAlwaysHidden|adjustPan"/>
--        <activity android:configChanges="keyboardHidden|orientation|screenLayout|uiMode|screenSize" android:exported="false" android:launchMode="singleTop" android:name="com.oplus.camera.setting.IQConfigSetActivity" android:permission="oplus.permission.OPLUS_COMPONENT_SAFE" android:resizeableActivity="true" android:screenOrientation="behind" android:showWhenLocked="true" android:theme="@style/AppNoTitleTheme.PreferenceFragment">
-+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|uiMode|screenSize" android:exported="false" android:launchMode="singleTop" android:name="com.oplus.camera.setting.IQConfigSetActivity" android:resizeableActivity="true" android:screenOrientation="behind" android:showWhenLocked="true" android:theme="@style/AppNoTitleTheme.PreferenceFragment">
-             <intent-filter>
-                 <action android:name="oplus.intent.action.IQ_CONFIG_SET"/>
-                 <category android:name="android.intent.category.DEFAULT"/>
-             </intent-filter>
-             <meta-data android:name="com.android.settings.APP_PRIORITY" android:value="30010"/>
-         </activity>
--        <activity android:configChanges="keyboardHidden|orientation|screenLayout|uiMode|screenSize" android:exported="true" android:launchMode="singleTop" android:name="com.oplus.camera.feature.keymagic.KeyMagicSettingActivity" android:permission="oplus.permission.OPLUS_COMPONENT_SAFE" android:resizeableActivity="true" android:screenOrientation="behind" android:theme="@style/AppNoTitleTheme.PreferenceFragmentNoAnim">
-+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|uiMode|screenSize" android:exported="true" android:launchMode="singleTop" android:name="com.oplus.camera.feature.keymagic.KeyMagicSettingActivity" android:resizeableActivity="true" android:screenOrientation="behind" android:theme="@style/AppNoTitleTheme.PreferenceFragmentNoAnim">
-             <intent-filter>
-                 <action android:name="oplus.intent.action.APP_KEY_MAGIC_CHOICE"/>
-                 <category android:name="android.intent.category.DEFAULT"/>
-             </intent-filter>
-         </activity>
--        <service android:enabled="true" android:exported="true" android:name="com.oplus.camera.feature.keymagic.KeyMagicService" android:permission="oplus.permission.OPLUS_COMPONENT_SAFE">
-+        <service android:enabled="true" android:exported="true" android:name="com.oplus.camera.feature.keymagic.KeyMagicService">
-             <intent-filter>
-                 <action android:name="oplus.intent.action.KEY_MAGIC_MESSENGER"/>
-             </intent-filter>
-         </service>
--        <activity android:configChanges="keyboardHidden|orientation|screenLayout|uiMode|screenSize" android:exported="false" android:launchMode="singleTop" android:name="com.oplus.camera.setting.AppConfigSetActivity" android:permission="oplus.permission.OPLUS_COMPONENT_SAFE" android:resizeableActivity="true" android:screenOrientation="behind" android:showWhenLocked="true" android:theme="@style/AppNoTitleTheme.PreferenceFragment">
-+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|uiMode|screenSize" android:exported="false" android:launchMode="singleTop" android:name="com.oplus.camera.setting.AppConfigSetActivity" android:resizeableActivity="true" android:screenOrientation="behind" android:showWhenLocked="true" android:theme="@style/AppNoTitleTheme.PreferenceFragment">
-             <intent-filter>
-                 <action android:name="oplus.intent.action.APP_CONFIG_SET"/>
-                 <category android:name="android.intent.category.DEFAULT"/>
-             </intent-filter>
-             <meta-data android:name="com.android.settings.APP_PRIORITY" android:value="30010"/>
-         </activity>
--        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize" android:exported="true" android:icon="@drawable/ic_camera_setting" android:launchMode="singleTop" android:name="com.oplus.camera.setting.CameraSettingActivity" android:permission="oplus.permission.OPLUS_COMPONENT_SAFE" android:resizeableActivity="true" android:screenOrientation="behind" android:showWhenLocked="true" android:theme="@style/AppNoTitleTheme.PreferenceFragment">
-+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize" android:exported="true" android:icon="@drawable/ic_camera_setting" android:launchMode="singleTop" android:name="com.oplus.camera.setting.CameraSettingActivity" android:resizeableActivity="true" android:screenOrientation="behind" android:showWhenLocked="true" android:theme="@style/AppNoTitleTheme.PreferenceFragment">
-             <intent-filter>
-                 <action android:name="oplus.intent.action.APP_SETTINGS"/>
-                 <category android:name="android.intent.category.DEFAULT"/>
 @@ -369,7 +369,7 @@
+                 <category android:name="android.intent.category.DEFAULT"/>
              </intent-filter>
-             <meta-data android:name="com.android.settings.APP_PRIORITY" android:value="30010"/>
-         </activity>
--        <activity android:exported="true" android:label="@string/ai_camera_title" android:name="com.oplus.camera.setting.AiCameraActivity" android:permission="com.oplus.permission.safe.SETTINGS" android:resizeableActivity="true" android:screenOrientation="behind" android:theme="@style/AICameraTheme">
-+        <activity android:exported="true" android:label="@string/ai_camera_title" android:name="com.oplus.camera.setting.AiCameraActivity" android:resizeableActivity="true" android:screenOrientation="behind" android:theme="@style/AICameraTheme">
+         </activity-alias>
+-        <activity-alias android:exported="true" android:name="com.oplus.gallery.photoeditorpage.OpenLiveStickerActivity" android:permission="com.oppo.permission.safe.PRIVATE" android:targetActivity="com.oplus.gallery.pictureeditorpage.PhotoEditorActivity">
++        <activity-alias android:exported="true" android:name="com.oplus.gallery.photoeditorpage.OpenLiveStickerActivity" android:targetActivity="com.oplus.gallery.pictureeditorpage.PhotoEditorActivity">
              <intent-filter>
-                 <action android:name="com.oplus.setting.ai.action.SETTING_ENTRANCE"/>
+                 <action android:name="oplus.intent.action.OPEN_LIVE_STICKER"/>
                  <category android:name="android.intent.category.DEFAULT"/>
-@@ -382,7 +382,7 @@
-             <meta-data android:name="com.oplus.setting.ai.PROVIDER" android:value="com.oplus.ai.camera.visibility_attr_provider"/>
-             <meta-data android:name="com.oplus.setting.ai.PRIORITY" android:value="1"/>
+@@ -390,7 +390,7 @@
+             </intent-filter>
          </activity>
--        <activity android:configChanges="keyboardHidden|orientation|screenLayout|uiMode|screenSize" android:exported="false" android:launchMode="singleTop" android:name="com.oplus.camera.setting.CameraDebugActivity" android:permission="oplus.permission.OPLUS_COMPONENT_SAFE" android:resizeableActivity="true" android:screenOrientation="behind" android:showWhenLocked="true" android:theme="@style/AppNoTitleTheme.PreferenceFragment">
-+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|uiMode|screenSize" android:exported="false" android:launchMode="singleTop" android:name="com.oplus.camera.setting.CameraDebugActivity" android:resizeableActivity="true" android:screenOrientation="behind" android:showWhenLocked="true" android:theme="@style/AppNoTitleTheme.PreferenceFragment">
+         <activity android:configChanges="keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize" android:exported="false" android:label="@string/picture_crop_label" android:name="com.oplus.gallery.pictureeditorpage.wallpaper.SetAsWallpaperActivity" android:screenOrientation="portrait" android:theme="@style/Theme.GalleryForWallPaper"/>
+-        <receiver android:enabled="true" android:exported="true" android:name="com.oplus.gallery.photoeditor.CancelScanReceiver" android:permission="com.oppo.gallery3d.self.component.safe.permission">
++        <receiver android:enabled="true" android:exported="true" android:name="com.oplus.gallery.photoeditor.CancelScanReceiver">
              <intent-filter>
-                 <action android:name="oplus.intent.action.APPDebug"/>
+                 <action android:name="com.oplus.gallery.photoeditor.background_scan_manual_pending_action"/>
+             </intent-filter>
+@@ -402,7 +402,7 @@
+             </intent-filter>
+         </activity>
+         <meta-data android:name="ringtone_edit_support" android:value="true"/>
+-        <activity android:configChanges="keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="true" android:hardwareAccelerated="true" android:label="@string/videoeditor_memories_name" android:launchMode="singleTop" android:name="com.oplus.gallery.videoeditorpage.memories.app.MemoriesActivity" android:permission="oppo.permission.OPPO_COMPONENT_SAFE" android:process=":memories" android:resizeableActivity="false" android:theme="@style/VideoEditor_MemoriesTheme">
++        <activity android:configChanges="keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="true" android:hardwareAccelerated="true" android:label="@string/videoeditor_memories_name" android:launchMode="singleTop" android:name="com.oplus.gallery.videoeditorpage.memories.app.MemoriesActivity" android:process=":memories" android:resizeableActivity="false" android:theme="@style/VideoEditor_MemoriesTheme">
+             <intent-filter>
+                 <action android:name="oplus.intent.action.view.memories"/>
                  <category android:name="android.intent.category.DEFAULT"/>
-@@ -400,12 +400,12 @@
-                 <action android:name="android.intent.action.CAMERA_BUTTON"/>
+@@ -412,7 +412,7 @@
+         <activity android:configChanges="keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:launchMode="singleTop" android:name="com.oplus.gallery.videoeditorpage.video.app.EditorActivity" android:resizeableActivity="false" android:screenOrientation="behind" android:supportsRtl="true" android:theme="@style/VideoEditor_Theme" android:windowSoftInputMode="adjustResize"/>
+         <activity android:configChanges="keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:launchMode="singleTop" android:name="com.oplus.gallery.videoeditorpage.video.app.TemplateListEditorActivity" android:resizeableActivity="false" android:screenOrientation="behind" android:supportsRtl="true" android:theme="@style/VideoEditor_Theme" android:windowSoftInputMode="adjustResize"/>
+         <activity android:configChanges="keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:launchMode="singleTop" android:name="com.oplus.gallery.videoeditorpage.video.app.TemplateItemEditorActivity" android:resizeableActivity="false" android:screenOrientation="behind" android:supportsRtl="true" android:theme="@style/VideoEditor_Theme" android:windowSoftInputMode="adjustResize"/>
+-        <activity android:configChanges="keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="true" android:hardwareAccelerated="true" android:launchMode="singleTop" android:name="com.oplus.gallery.videoeditorpage.video.app.EditorIntroActivity" android:permission="oppo.permission.OPPO_COMPONENT_SAFE" android:resizeableActivity="false" android:screenOrientation="behind" android:supportsRtl="true" android:theme="@style/VideoEditorIntro_Theme" android:windowSoftInputMode="adjustResize">
++        <activity android:configChanges="keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="true" android:hardwareAccelerated="true" android:launchMode="singleTop" android:name="com.oplus.gallery.videoeditorpage.video.app.EditorIntroActivity" android:resizeableActivity="false" android:screenOrientation="behind" android:supportsRtl="true" android:theme="@style/VideoEditorIntro_Theme" android:windowSoftInputMode="adjustResize">
+             <intent-filter>
+                 <action android:name="coloros.intent.action.view.videoeditor"/>
+                 <category android:name="android.intent.category.DEFAULT"/>
+@@ -429,7 +429,7 @@
+             </intent-filter>
+         </activity>
+         <activity android:configChanges="keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:launchMode="singleTop" android:name="com.oplus.gallery.videoeditorpage.video.app.HelpDetailActivity" android:resizeableActivity="false" android:screenOrientation="behind" android:supportsRtl="true" android:theme="@style/VideoEditor_Theme" android:windowSoftInputMode="adjustResize"/>
+-        <activity android:configChanges="keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="true" android:label="@string/videoeditor_video_send" android:name="com.oplus.gallery.videoeditorpage.video.VideoEditorSendActivity" android:permission="oppo.permission.OPPO_COMPONENT_SAFE" android:resizeableActivity="false" android:screenOrientation="user" android:theme="@style/VideoEditor_VideoSlowMotionTheme">
++        <activity android:configChanges="keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="true" android:label="@string/videoeditor_video_send" android:name="com.oplus.gallery.videoeditorpage.video.VideoEditorSendActivity" android:resizeableActivity="false" android:screenOrientation="user" android:theme="@style/VideoEditor_VideoSlowMotionTheme">
+             <intent-filter>
+                 <action android:name="oplus.intent.action.view.send.slowmotion"/>
+                 <category android:name="android.intent.category.DEFAULT"/>
+@@ -496,7 +496,7 @@
+             </intent-filter>
+             <meta-data android:name="oplus_config_change" android:value="@integer/base_static_wallpaper_color_flag"/>
+         </activity>
+-        <activity-alias android:configChanges="keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|uiMode" android:exported="true" android:label="@string/app_name" android:name="com.oplus.gallery3d.app.MemoriesActivity" android:permission="oppo.permission.OPPO_COMPONENT_SAFE" android:targetActivity="com.oppo.gallery3d.app.ViewGallery" android:theme="@style/main_ViewGalleryTheme">
++        <activity-alias android:configChanges="keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|uiMode" android:exported="true" android:label="@string/app_name" android:name="com.oplus.gallery3d.app.MemoriesActivity" android:targetActivity="com.oppo.gallery3d.app.ViewGallery" android:theme="@style/main_ViewGalleryTheme">
+             <intent-filter>
+                 <action android:name="oplus.intent.action.view.memories_album"/>
+                 <category android:name="android.intent.category.DEFAULT"/>
+@@ -506,7 +506,7 @@
+                 <category android:name="android.intent.category.DEFAULT"/>
+             </intent-filter>
+         </activity-alias>
+-        <activity-alias android:configChanges="keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|uiMode" android:exported="true" android:label="@string/app_name" android:name="com.oppo.gallery3d.app.Gallery2" android:permission="oppo.permission.OPPO_COMPONENT_SAFE" android:targetActivity="com.oppo.gallery3d.app.ViewGallery" android:theme="@style/main_ViewGalleryTheme">
++        <activity-alias android:configChanges="keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|uiMode" android:exported="true" android:label="@string/app_name" android:name="com.oppo.gallery3d.app.Gallery2" android:targetActivity="com.oppo.gallery3d.app.ViewGallery" android:theme="@style/main_ViewGalleryTheme">
+             <intent-filter>
+                 <action android:name="com.oppo.gallery3d.action.review"/>
+                 <category android:name="android.intent.category.DEFAULT"/>
+@@ -518,7 +518,7 @@
+                 <data android:mimeType="*/*"/>
+             </intent-filter>
+         </activity-alias>
+-        <activity-alias android:configChanges="keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|uiMode" android:exported="true" android:label="@string/app_name" android:name="com.oppo.gallery3d.app.OppoPermissionGallery" android:permission="oppo.permission.OPPO_COMPONENT_SAFE" android:targetActivity="com.oppo.gallery3d.app.ViewGallery" android:theme="@style/main_ViewGalleryTheme">
++        <activity-alias android:configChanges="keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|uiMode" android:exported="true" android:label="@string/app_name" android:name="com.oppo.gallery3d.app.OppoPermissionGallery" android:targetActivity="com.oppo.gallery3d.app.ViewGallery" android:theme="@style/main_ViewGalleryTheme">
+             <intent-filter>
+                 <action android:name="com.oppo.gallery3d.video.view"/>
+                 <category android:name="android.intent.category.DEFAULT"/>
+@@ -526,7 +526,7 @@
+                 <data android:mimeType="video/*"/>
+             </intent-filter>
+         </activity-alias>
+-        <activity android:configChanges="keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize" android:exported="true" android:label="@string/app_name" android:name="com.oppo.gallery3d.app.RecycleBinActivity" android:permission="com.oplus.permission.safe.PRIVATE" android:resizeableActivity="true" android:screenOrientation="user" android:theme="@style/CommonDefaultTheme" android:uiOptions="splitActionBarWhenNarrow">
++        <activity android:configChanges="keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize" android:exported="true" android:label="@string/app_name" android:name="com.oppo.gallery3d.app.RecycleBinActivity" android:resizeableActivity="true" android:screenOrientation="user" android:theme="@style/CommonDefaultTheme" android:uiOptions="splitActionBarWhenNarrow">
+             <intent-filter>
+                 <action android:name="oplus.intent.action.view.gallery_recycle_bin"/>
+                 <category android:name="android.intent.category.DEFAULT"/>
+@@ -535,8 +535,8 @@
+         <activity android:exported="false" android:label="@string/app_name" android:name="com.oplus.gallery.cshot_page.ui.CShotActivity" android:screenOrientation="behind" android:theme="@style/cshot_activity_theme"/>
+         <activity android:autoRemoveFromRecents="true" android:configChanges="keyboard|keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="false" android:label="@string/app_name" android:name="com.oplus.gallery.photo_page.ui.PhotoSelfSplitActivity" android:taskAffinity="com.oplus.gallery.photo_page.ui.PhotoSelfSplitActivity" android:theme="@style/main_ViewGalleryTheme"/>
+         <activity android:autoRemoveFromRecents="true" android:configChanges="keyboard|keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="false" android:name="com.oppo.gallery3d.app.ViewGalleryInner" android:theme="@style/main_InnerGalleryTheme"/>
+-        <service android:enabled="true" android:exported="true" android:name="com.oppo.gallery3d.predecode.PreTileDecodeService" android:permission="oppo.permission.OPPO_COMPONENT_SAFE"/>
+-        <service android:enabled="true" android:exported="true" android:name="com.oplus.gallery.picture_page.predecode.OplusPreTileDecodeService" android:permission="oppo.permission.OPPO_COMPONENT_SAFE"/>
++        <service android:enabled="true" android:exported="true" android:name="com.oppo.gallery3d.predecode.PreTileDecodeService"/>
++        <service android:enabled="true" android:exported="true" android:name="com.oplus.gallery.picture_page.predecode.OplusPreTileDecodeService"/>
+         <meta-data android:name="com.coloros.ocs.display.AUTH_CODE" android:value="ATBFAiEA/9wMOjJV3+7rrO9NlmpDE53PqX08V/C5tFcyGrlUNp0CIGL0tpzCF/Eui9HsT/HYML2DFiQyk2J7QOeD6Ee2FbHWbv1iM4AAAAA=;ATBFAiAih9ACJsgGOEeRvcxFX7EwBa5GGylGSLSXeVHBMoeHBwIhANaeBYpUfepUsETHTuboa4SSFaS8PotqCAG7lGhIV2isb0d1kIAAAAA=;ATBGAiEA2u6qrOePrErLLp5oDhx7z/zHfHJJ8LJwi5yPb4/avh8CIQC4MBeLc9t3MOSsQ49idWTL9FUVXAAzS/dxlHL6yFPuU28fvSeAAAAA"/>
+         <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:exported="true" android:hardwareAccelerated="true" android:launchMode="singleTop" android:name="com.oplus.gallery.albumsetpage.selection.pictures.ui.SelectionActivity" android:resizeableActivity="true" android:screenOrientation="behind" android:taskAffinity="com.oplus.gallery.albumsetpage.selection.pictures.ui.SelectionActivity" android:theme="@style/SelectionActivityStyle" android:uiOptions="splitActionBarWhenNarrow">
+             <intent-filter>
+@@ -573,21 +573,21 @@
+             </intent-filter>
+         </activity-alias>
+         <activity-alias android:exported="true" android:name="com.oppo.gallery3d.app.Gallery" android:targetActivity="com.oplus.gallery.albumsetpage.selection.pictures.ui.SelectionActivity"/>
+-        <activity android:configChanges="keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="true" android:launchMode="singleTop" android:name="com.oplus.gallery.searchpage.SearchActivity" android:permission="oppo.permission.OPPO_COMPONENT_SAFE" android:taskAffinity="com.oppo.gallery3d.app.Gallery" android:theme="@style/search_Theme.Search">
++        <activity android:configChanges="keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="true" android:launchMode="singleTop" android:name="com.oplus.gallery.searchpage.SearchActivity" android:taskAffinity="com.oppo.gallery3d.app.Gallery" android:theme="@style/search_Theme.Search">
+             <intent-filter>
+                 <action android:name="android.intent.action.SEARCH"/>
+             </intent-filter>
+             <meta-data android:name="android.app.searchable" android:resource="@xml/model_accurate_searchable"/>
+         </activity>
+-        <activity-alias android:configChanges="keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize" android:exported="true" android:launchMode="singleTop" android:name="com.oppo.gallery3d.app.SearchActivity" android:permission="oppo.permission.OPPO_COMPONENT_SAFE" android:screenOrientation="portrait" android:targetActivity="com.oplus.gallery.searchpage.SearchActivity" android:taskAffinity="com.oppo.gallery3d.app.Gallery" android:theme="@style/search_Theme.Search">
++        <activity-alias android:configChanges="keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize" android:exported="true" android:launchMode="singleTop" android:name="com.oppo.gallery3d.app.SearchActivity" android:screenOrientation="portrait" android:targetActivity="com.oplus.gallery.searchpage.SearchActivity" android:taskAffinity="com.oppo.gallery3d.app.Gallery" android:theme="@style/search_Theme.Search">
+             <intent-filter>
+                 <action android:name="android.intent.action.SEARCH"/>
+             </intent-filter>
+             <meta-data android:name="android.app.searchable" android:resource="@xml/model_accurate_searchable"/>
+         </activity-alias>
+         <provider android:authorities="com.oplus.gallery.searchpage.provider.searchsuggestionprovider" android:exported="false" android:multiprocess="false" android:name="com.oplus.gallery.searchpage.provider.SearchSuggestionProvider"/>
+-        <provider android:authorities="com.oppo.gallery3d.albumsprovider" android:exported="true" android:grantUriPermissions="true" android:multiprocess="false" android:name="com.oplus.gallery.openabilitypage.ExternalColorosAlbumsProvider" android:permission="oppo.permission.OPPO_COMPONENT_SAFE" android:syncable="false"/>
+-        <provider android:authorities="com.oplus.gallery.albumsprovider" android:exported="true" android:grantUriPermissions="true" android:multiprocess="false" android:name="com.oplus.gallery.openabilitypage.ExternalAlbumsProvider" android:permission="oppo.permission.OPPO_COMPONENT_SAFE" android:syncable="false"/>
++        <provider android:authorities="com.oppo.gallery3d.albumsprovider" android:exported="true" android:grantUriPermissions="true" android:multiprocess="false" android:name="com.oplus.gallery.openabilitypage.ExternalColorosAlbumsProvider" android:syncable="false"/>
++        <provider android:authorities="com.oplus.gallery.albumsprovider" android:exported="true" android:grantUriPermissions="true" android:multiprocess="false" android:name="com.oplus.gallery.openabilitypage.ExternalAlbumsProvider" android:syncable="false"/>
+         <provider android:authorities="com.oppo.gallery3d.open.provider" android:exported="true" android:grantUriPermissions="true" android:multiprocess="false" android:name="com.oplus.gallery.openabilitypage.GalleryOpenProvider" android:syncable="false"/>
+         <provider android:authorities="com.open.gallery.smart.provider" android:exported="true" android:grantUriPermissions="true" android:multiprocess="false" android:name="com.oplus.gallery.openabilitypage.SmartOpenProvider" android:syncable="false"/>
+         <provider android:authorities="com.coloros.gallery3d.photopicker" android:exported="true" android:grantUriPermissions="true" android:name="com.oplus.gallery.openabilitypage.photopicker.GalleryCloudMediaProvider" android:permission="com.android.providers.media.permission.MANAGE_CLOUD_MEDIA_PROVIDERS">
+@@ -595,13 +595,13 @@
+                 <action android:name="android.content.action.CLOUD_MEDIA_PROVIDER"/>
+             </intent-filter>
+         </provider>
+-        <service android:exported="true" android:name="com.oplus.gallery.openabilitypage.photopicker.GalleryKeepAliveService" android:permission="com.oplus.gallery.openabilitypage.permission.GALLERY_KEEP_ALIVE_SERVICE">
++        <service android:exported="true" android:name="com.oplus.gallery.openabilitypage.photopicker.GalleryKeepAliveService">
+             <intent-filter>
+                 <action android:name="com.coloros.gallery3d.photopicker.GALLERY_KEEP_ALIVE"/>
+                 <category android:name="android.intent.category.DEFAULT"/>
+             </intent-filter>
+         </service>
+-        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="true" android:icon="@drawable/app_icon_system_application_gallery3d" android:launchMode="singleTop" android:name="com.oplus.gallery.settingpage.SettingsActivity" android:permission="oppo.permission.OPPO_COMPONENT_SAFE" android:resizeableActivity="true" android:theme="@style/WhiteTheme">
++        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="true" android:icon="@drawable/app_icon_system_application_gallery3d" android:launchMode="singleTop" android:name="com.oplus.gallery.settingpage.SettingsActivity" android:resizeableActivity="true" android:theme="@style/WhiteTheme">
+             <intent-filter>
+                 <action android:name="oppo.intent.action.APP_SETTINGS"/>
+                 <category android:name="android.intent.category.DEFAULT"/>
+@@ -620,7 +620,7 @@
+         <meta-data android:name="upgrade_product_code" android:value="2006"/>
+         <activity android:exported="false" android:launchMode="singleTop" android:name="com.oplus.gallery.settingpage.dev.DevActivity"/>
+         <meta-data android:name="oplus_search_config" android:resource="@xml/oplus_search_config"/>
+-        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="true" android:launchMode="singleTop" android:name="com.oplus.gallery.settingpage.SettingSecurityShareActivity" android:permission="com.oplus.permission.safe.SETTINGS" android:resizeableActivity="true" android:screenOrientation="behind" android:theme="@style/WhiteTheme">
++        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="true" android:launchMode="singleTop" android:name="com.oplus.gallery.settingpage.SettingSecurityShareActivity" android:resizeableActivity="true" android:screenOrientation="behind" android:theme="@style/WhiteTheme">
+             <intent-filter>
+                 <action android:name="com.android.settings.MANUFACTURER_APPLICATION_SETTING"/>
+             </intent-filter>
+@@ -635,7 +635,7 @@
+             <meta-data android:name="com.oplus.settings.visibility_uri" android:value="content://com.oplus.gallery.settingvisibility/securityshare"/>
+             <meta-data android:name="com.android.settings.keyhint" android:value="key_security_share"/>
+         </activity>
+-        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="true" android:launchMode="singleTop" android:name="com.oplus.gallery.settingpage.SettingPrivacyWatermarkInfoActivity" android:permission="com.oplus.permission.safe.SETTINGS" android:resizeableActivity="true" android:screenOrientation="behind" android:theme="@style/WhiteTheme" android:uiOptions="splitActionBarWhenNarrow">
++        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="true" android:launchMode="singleTop" android:name="com.oplus.gallery.settingpage.SettingPrivacyWatermarkInfoActivity" android:resizeableActivity="true" android:screenOrientation="behind" android:theme="@style/WhiteTheme" android:uiOptions="splitActionBarWhenNarrow">
+             <intent-filter>
+                 <action android:name="com.android.settings.MANUFACTURER_APPLICATION_SETTING"/>
+             </intent-filter>
+@@ -650,7 +650,7 @@
+             <meta-data android:name="com.oplus.settings.visibility_uri" android:value="content://com.oplus.gallery.settingvisibility/privacywatermark"/>
+             <meta-data android:name="com.android.settings.keyhint" android:value="key_privacy_watermark"/>
+         </activity>
+-        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="true" android:launchMode="singleTop" android:name="com.oplus.gallery.settingpage.SettingAutomaticCodingInfoActivity" android:permission="com.oplus.permission.safe.SETTINGS" android:resizeableActivity="true" android:screenOrientation="behind" android:theme="@style/WhiteTheme" android:uiOptions="splitActionBarWhenNarrow">
++        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="true" android:launchMode="singleTop" android:name="com.oplus.gallery.settingpage.SettingAutomaticCodingInfoActivity" android:resizeableActivity="true" android:screenOrientation="behind" android:theme="@style/WhiteTheme" android:uiOptions="splitActionBarWhenNarrow">
+             <intent-filter>
+                 <action android:name="com.android.settings.MANUFACTURER_APPLICATION_SETTING"/>
+             </intent-filter>
+@@ -674,9 +674,9 @@
+             </intent-filter>
+             <meta-data android:name="oplus.setting.search_index_mode" android:value="1"/>
+         </provider>
+-        <provider android:authorities="com.oplus.gallery.settingvisibility" android:enabled="true" android:exported="true" android:grantUriPermissions="true" android:name="com.oplus.gallery.settingpage.SettingVisibilityProvider" android:permission="com.oplus.permission.safe.SETTINGS"/>
++        <provider android:authorities="com.oplus.gallery.settingvisibility" android:enabled="true" android:exported="true" android:grantUriPermissions="true" android:name="com.oplus.gallery.settingpage.SettingVisibilityProvider"/>
+         <meta-data android:name="com.oplus.ocs.card.AUTH_CODE" android:value="ADBEAiAER850jpCe0yOS5ADv3gNm8OXK2kNclsYs4RmHpKmf0QIgMwX0S05DyjWjQJnnWxvI2ZkbYn7H+/bRrwE5yIL1lOdrvKEX;ADBGAiEAlLhFk0+iXpmYA6qqWQmgFvzN9makbVzGn53y+hLvvLECIQDOD8C3EiHnf9V1ovYIn2WYL1e6jpmgNVt7yrpaFwJ6pmqyVos=;ADBFAiBt76W3nuzsy8KHeJI4+rW0nT9M0G/I09CbW0Wiu4tO3QIhAIE1BxadTMSThEoeKHH9bhXoe9OC6NGiKxHTsAobIdBCbFL3cQ==;ADBEAiABh/lD/GJjlwNLDj3qqJrJovw74w9XYf64wcmJaabhpwIgKtqayr4/2RVW9dQAFhOqgFBn418i3MIl2xdMTZkOmyBsUvdi"/>
+-        <provider android:authorities="com.oplus.gallery.widget" android:enabled="true" android:exported="true" android:name="com.oplus.gallery.widgetlib.provider.GalleryCardWidgetProvider" android:permission="com.oplus.permission.safe.ASSISTANT">
++        <provider android:authorities="com.oplus.gallery.widget" android:enabled="true" android:exported="true" android:name="com.oplus.gallery.widgetlib.provider.GalleryCardWidgetProvider">
+             <intent-filter>
+                 <action android:name="android.appcard.action.APPCARD_UPDATE"/>
+             </intent-filter>
+@@ -688,8 +688,8 @@
+             <meta-data android:name="gallery.widget.provider.custom.4x2" android:resource="@xml/widget_custom_4x2"/>
+             <meta-data android:name="gallery.widget.provider.custom.4x4" android:resource="@xml/widget_custom_4x4"/>
+         </provider>
+-        <provider android:authorities="com.oplus.gallery.quick.app.card" android:exported="true" android:name="com.oplus.gallery.widgetlib.provider.GalleryQuickAppCardProvider" android:permission="com.oplus.permission.safe.ASSISTANT"/>
+-        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:exported="true" android:name="com.oplus.gallery.widgetpage.ui.picturemanager.CustomPictureManagerActivity" android:noHistory="true" android:permission="com.oplus.permission.safe.ASSISTANT" android:theme="@style/TransparentTheme">
++        <provider android:authorities="com.oplus.gallery.quick.app.card" android:exported="true" android:name="com.oplus.gallery.widgetlib.provider.GalleryQuickAppCardProvider"/>
++        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:exported="true" android:name="com.oplus.gallery.widgetpage.ui.picturemanager.CustomPictureManagerActivity" android:noHistory="true" android:theme="@style/TransparentTheme">
+             <intent-filter>
+                 <action android:name="oplus.intent.action.WIDGET_CUSTOM_PICTURE_MANAGER"/>
+                 <category android:name="android.intent.category.DEFAULT"/>
+@@ -706,7 +706,7 @@
+                 <action android:name="com.oplus.daydreamvideo.REQUEST_RESTORE_DATA"/>
              </intent-filter>
          </receiver>
--        <receiver android:exported="true" android:name="com.oplus.camera.upgrade.tunning.TuningParameterUpgradeReceiver" android:permission="oplus.permission.OPLUS_COMPONENT_SAFE">
-+        <receiver android:exported="true" android:name="com.oplus.camera.upgrade.tunning.TuningParameterUpgradeReceiver">
+-        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:exported="true" android:hardwareAccelerated="true" android:label="@string/common_app_name" android:name="com.oplus.gallery.sharepage.GalleryShareActivity" android:permission="oppo.permission.OPPO_COMPONENT_SAFE" android:taskAffinity="com.oplus.gallery.sharepage.GalleryShareActivity" android:theme="@style/addition_OplusShareActivityStyle" android:uiOptions="splitActionBarWhenNarrow">
++        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:exported="true" android:hardwareAccelerated="true" android:label="@string/common_app_name" android:name="com.oplus.gallery.sharepage.GalleryShareActivity" android:taskAffinity="com.oplus.gallery.sharepage.GalleryShareActivity" android:theme="@style/addition_OplusShareActivityStyle" android:uiOptions="splitActionBarWhenNarrow">
              <intent-filter>
-                 <action android:name="com.oplusos.sau.DATARES_UPDATE"/>
+                 <action android:name="oppo.intent.action.galleryshare"/>
+                 <category android:name="android.intent.category.DEFAULT"/>
+@@ -721,7 +721,7 @@
              </intent-filter>
-         </receiver>
--        <receiver android:exported="false" android:name="com.oplus.camera.PreLoadReceiver" android:permission="oplus.permission.OPLUS_COMPONENT_SAFE">
-+        <receiver android:exported="false" android:name="com.oplus.camera.PreLoadReceiver">
+             <meta-data android:name="isSupportShare" android:value="true"/>
+         </activity>
+-        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:exported="true" android:hardwareAccelerated="true" android:label="@string/common_app_name" android:launchMode="singleTop" android:name="com.oplus.gallery.sharepage.ScreenShotShareActivity" android:permission="com.oplus.permission.safe.SETTINGS" android:taskAffinity="com.oplus.gallery.sharepage.ScreenShotShareActivity" android:theme="@style/addition_OplusShareActivityStyle" android:uiOptions="splitActionBarWhenNarrow">
++        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:exported="true" android:hardwareAccelerated="true" android:label="@string/common_app_name" android:launchMode="singleTop" android:name="com.oplus.gallery.sharepage.ScreenShotShareActivity" android:taskAffinity="com.oplus.gallery.sharepage.ScreenShotShareActivity" android:theme="@style/addition_OplusShareActivityStyle" android:uiOptions="splitActionBarWhenNarrow">
              <intent-filter>
-                 <action android:name="com.oplus.action.PRE_LOAD_CAMERA"/>
-             </intent-filter>
-@@ -430,7 +430,7 @@
+                 <action android:name="oplus.intent.action.SCREENSHOT_GALLERY_SHARE"/>
+                 <category android:name="android.intent.category.DEFAULT"/>
+@@ -731,13 +731,13 @@
+             <meta-data android:name="isSupportShare" android:value="true"/>
+         </activity>
+         <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:hardwareAccelerated="true" android:label="@string/common_app_name" android:name="com.oplus.gallery.sharepage.GalleryShareInnerActivity" android:theme="@style/ShareActivityStyle"/>
+-        <activity android:exported="true" android:name="com.oplus.gallery.sharepage.ReceiveShareActivity" android:permission="com.oplus.permission.safe.SETTINGS" android:theme="@style/TransparentTheme">
++        <activity android:exported="true" android:name="com.oplus.gallery.sharepage.ReceiveShareActivity" android:theme="@style/TransparentTheme">
+             <intent-filter>
+                 <action android:name="com.oplus.interconnect.action.SHARED_DATA"/>
                  <category android:name="android.intent.category.DEFAULT"/>
              </intent-filter>
          </activity>
--        <activity android:configChanges="mcc|mnc|keyboardHidden|uiMode" android:enableOnBackInvokedCallback="false" android:excludeFromRecents="false" android:exported="true" android:launchMode="singleInstance" android:name="com.oplus.camera.outflash.OutFlashOtaActivity" android:permission="com.oplus.camera.permission.ENTRY_SETTING" android:resizeableActivity="false" android:screenOrientation="portrait">
-+        <activity android:configChanges="mcc|mnc|keyboardHidden|uiMode" android:enableOnBackInvokedCallback="false" android:excludeFromRecents="false" android:exported="true" android:launchMode="singleInstance" android:name="com.oplus.camera.outflash.OutFlashOtaActivity" android:resizeableActivity="false" android:screenOrientation="portrait">
+-        <service android:exported="true" android:name="com.oplus.gallery.phoneclonepage.br.GalleryBRPluginService" android:permission="oppo.permission.OPPO_COMPONENT_SAFE">
++        <service android:exported="true" android:name="com.oplus.gallery.phoneclonepage.br.GalleryBRPluginService">
              <intent-filter>
-                 <action android:name="oplus.intent.action.OUTFLASH_FOTA"/>
-                 <category android:name="android.intent.category.DEFAULT"/>
-@@ -442,12 +442,12 @@
-                 <category android:name="android.intent.category.DEFAULT"/>
+                 <action android:name="com.oplus.br.service"/>
              </intent-filter>
-         </activity>
--        <receiver android:exported="true" android:name="com.oplus.camera.debug.DebugBroadcastReceiver" android:permission="oplus.permission.OPLUS_COMPONENT_SAFE">
-+        <receiver android:exported="true" android:name="com.oplus.camera.debug.DebugBroadcastReceiver">
-             <intent-filter>
-                 <action android:name="com.oplus.engineermode.EngineerModeMain"/>
-             </intent-filter>
-         </receiver>
--        <service android:enabled="true" android:exported="false" android:foregroundServiceType="dataSync" android:name="com.oplus.camera.aps.service.ApsService" android:permission="oplus.permission.OPLUS_COMPONENT_SAFE">
-+        <service android:enabled="true" android:exported="false" android:foregroundServiceType="dataSync" android:name="com.oplus.camera.aps.service.ApsService">
-             <intent-filter>
-                 <action android:name="com.camera.action.START_APS_SERVICE"/>
-             </intent-filter>
-@@ -457,37 +457,37 @@
-                 <action android:name="android.service.quicksettings.action.QS_TILE"/>
-             </intent-filter>
-         </service>
--        <service android:enabled="true" android:exported="true" android:name="com.oplus.camera.bluetooth.BlueToothScanService" android:permission="com.oplus.permission.safe.IOT">
-+        <service android:enabled="true" android:exported="true" android:name="com.oplus.camera.bluetooth.BlueToothScanService">
-             <intent-filter>
-                 <action android:name="com.oplus.intent.action.CAMERA_BLUE_TOOTH_SCAN_SERVICE"/>
-             </intent-filter>
-         </service>
-         <activity android:configChanges="mcc|mnc|keyboardHidden|uiMode" android:enableOnBackInvokedCallback="false" android:excludeFromRecents="true" android:exported="false" android:launchMode="singleInstance" android:name="com.oplus.camera.maghandle.ui.MagHandleDiscoveryDialogActivity" android:resizeableActivity="false" android:screenOrientation="portrait" android:theme="@style/BlueToothDiscoveryActivityTheme"/>
-         <activity android:configChanges="mcc|mnc|keyboardHidden|uiMode" android:enableOnBackInvokedCallback="false" android:excludeFromRecents="true" android:exported="false" android:launchMode="singleInstance" android:name="com.oplus.camera.outflash.OutFlashDiscoveryDialogActivity" android:resizeableActivity="false" android:screenOrientation="portrait" android:theme="@style/BlueToothDiscoveryActivityTheme"/>
--        <activity android:configChanges="mcc|mnc|keyboardHidden|uiMode" android:enableOnBackInvokedCallback="false" android:excludeFromRecents="true" android:exported="true" android:launchMode="singleInstance" android:name="com.oplus.camera.outflash.OutFlashGuideActivity" android:permission="com.oplus.camera.permission.ENTRY_SETTING" android:resizeableActivity="false" android:screenOrientation="portrait">
-+        <activity android:configChanges="mcc|mnc|keyboardHidden|uiMode" android:enableOnBackInvokedCallback="false" android:excludeFromRecents="true" android:exported="true" android:launchMode="singleInstance" android:name="com.oplus.camera.outflash.OutFlashGuideActivity" android:resizeableActivity="false" android:screenOrientation="portrait">
-             <intent-filter>
-                 <action android:name="oplus.intent.action.OUTFLASH_GUIDE"/>
-                 <category android:name="android.intent.category.DEFAULT"/>
-             </intent-filter>
-         </activity>
--        <service android:enabled="true" android:exported="true" android:name="com.oplus.camera.feature.aiMasterWatermark.GalleryConnectionService" android:permission="oplus.permission.OPLUS_COMPONENT_SAFE">
-+        <service android:enabled="true" android:exported="true" android:name="com.oplus.camera.feature.aiMasterWatermark.GalleryConnectionService">
-             <intent-filter>
-                 <action android:name="com.oplus.ai.master.watermark.aidl"/>
-             </intent-filter>
-         </service>
--        <provider android:authorities="com.oplus.camera.sticker.db.provider" android:exported="false" android:name="com.oplus.camera.feature.sticker.provider.StickerProvider" android:permission="oplus.permission.OPLUS_COMPONENT_SAFE"/>
--        <service android:exported="false" android:name="com.oplus.camera.feature.sticker.download.thumbnail.ThumbDownloadService" android:permission="oplus.permission.OPLUS_COMPONENT_SAFE"/>
--        <provider android:authorities="com.oplus.camera.aicloudhdprovider" android:exported="true" android:name="com.oplus.camera.feature.aicloudhd.provider.AiCloudHdProvider" android:permission="com.oplus.permission.safe.PRIVATE"/>
-+        <provider android:authorities="com.oplus.camera.sticker.db.provider" android:exported="false" android:name="com.oplus.camera.feature.sticker.provider.StickerProvider"/>
-+        <service android:exported="false" android:name="com.oplus.camera.feature.sticker.download.thumbnail.ThumbDownloadService"/>
-+        <provider android:authorities="com.oplus.camera.aicloudhdprovider" android:exported="true" android:name="com.oplus.camera.feature.aicloudhd.provider.AiCloudHdProvider"/>
-         <service android:enabled="true" android:exported="false" android:name="com.oplus.camera.screen.FolderAngleDetectService"/>
--        <service android:exported="true" android:name="com.oplus.camera.remote.RemoteService" android:permission="com.oplus.camera.remote.service.permission.CAPTURE_PREVIEW">
-+        <service android:exported="true" android:name="com.oplus.camera.remote.RemoteService">
-             <intent-filter>
-                 <action android:name="com.oplus.camera.remote.service"/>
-             </intent-filter>
-         </service>
-         <meta-data android:name="com.oplus.camera.CAPTURE_PREVIEW_SUPPORT" android:value="1"/>
--        <service android:exported="false" android:name="com.oplus.camera.upgrade.tunning.TuningParameterUpgradeService" android:permission="oplus.permission.OPLUS_COMPONENT_SAFE"/>
-+        <service android:exported="false" android:name="com.oplus.camera.upgrade.tunning.TuningParameterUpgradeService"/>
-         <service android:enabled="true" android:exported="false" android:name="com.oplus.camera.feature.defer.js.OffScreenDeferJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
--        <service android:exported="true" android:name="com.oplus.camera.migration.CameraBRPluginService" android:permission="com.oplus.permission.safe.BACKUP">
-+        <service android:exported="true" android:name="com.oplus.camera.migration.CameraBRPluginService">
-             <meta-data android:name="uniqueID" android:value="1880"/>
-             <meta-data android:name="version" android:value="1"/>
+@@ -747,7 +747,7 @@
              <meta-data android:name="isVendorSupport" android:value="true"/>
-@@ -498,7 +498,7 @@
+             <meta-data android:name="uniqueID" android:value="850"/>
+         </service>
+-        <service android:exported="true" android:name="com.oplus.gallery.phoneclonepage.br.GalleryIosBRPluginService" android:permission="com.oplus.permission.safe.BACKUP">
++        <service android:exported="true" android:name="com.oplus.gallery.phoneclonepage.br.GalleryIosBRPluginService">
+             <intent-filter>
+                 <action android:name="com.coloros.br.service"/>
+                 <action android:name="com.heytap.br.service"/>
+@@ -758,7 +758,7 @@
+             <meta-data android:name="isVendorSupport" android:value="true"/>
+             <meta-data android:name="uniqueID" android:value="1930"/>
+         </service>
+-        <service android:exported="true" android:name="com.oplus.gallery.phoneclonepage.br.GallerySysDataBRPluginService" android:permission="oppo.permission.OPPO_COMPONENT_SAFE">
++        <service android:exported="true" android:name="com.oplus.gallery.phoneclonepage.br.GallerySysDataBRPluginService">
+             <intent-filter>
+                 <action android:name="com.coloros.br.service"/>
+                 <action android:name="com.heytap.br.service"/>
+@@ -770,7 +770,7 @@
+             <meta-data android:name="uniqueID" android:value="1760"/>
+             <meta-data android:name="minSupportOsVersion" android:value="19"/>
+         </service>
+-        <service android:enabled="true" android:exported="true" android:name="com.oppo.gallery3d.sync.SyncGallery3dService" android:permission="oppo.permission.OPPO_COMPONENT_SAFE">
++        <service android:enabled="true" android:exported="true" android:name="com.oppo.gallery3d.sync.SyncGallery3dService">
+             <intent-filter>
+                 <action android:name="com.oppo.gallery3d.sync.action.SyncOperate"/>
+             </intent-filter>
+@@ -790,13 +790,13 @@
+         <uses-native-library android:name="libneuron_runtime.8.so" android:required="false"/>
+         <uses-native-library android:name="libcdsprpc.so" android:required="false"/>
+         <service android:enabled="true" android:exported="false" android:name="com.oplus.gallery.framework.abilities.scan.manager.GalleryScanService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+-        <receiver android:enabled="true" android:exported="false" android:name="com.oplus.gallery.framework.abilities.scan.component.AlarmReceiver" android:permission="oppo.permission.OPPO_COMPONENT_SAFE">
++        <receiver android:enabled="true" android:exported="false" android:name="com.oplus.gallery.framework.abilities.scan.component.AlarmReceiver">
+             <intent-filter>
+                 <action android:name="com.oplus.gallery.action.trigger.detect"/>
+             </intent-filter>
+         </receiver>
+         <meta-data android:name="com.heytap.cloudkit.sharealbum" android:value="1"/>
+-        <activity android:configChanges="orientation|screenLayout|screenSize|smallestScreenSize" android:exported="true" android:launchMode="singleTask" android:name="com.oplus.gallery.sharedalbumpage.ui.SharedAlbumMainActivity" android:permission="oplus.permission.OPLUS_COMPONENT_SAFE" android:screenOrientation="behind" android:taskAffinity="com.oplus.gallery.sharedalbumpage.ui.SharedAlbumMainActivity">
++        <activity android:configChanges="orientation|screenLayout|screenSize|smallestScreenSize" android:exported="true" android:launchMode="singleTask" android:name="com.oplus.gallery.sharedalbumpage.ui.SharedAlbumMainActivity" android:screenOrientation="behind" android:taskAffinity="com.oplus.gallery.sharedalbumpage.ui.SharedAlbumMainActivity">
+             <intent-filter>
+                 <action android:name="android.intent.action.VIEW"/>
+                 <category android:name="android.intent.category.DEFAULT"/>
+@@ -826,7 +826,7 @@
+                 <data android:mimeType="video/*"/>
+             </intent-filter>
+         </activity>
+-        <activity android:configChanges="keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="true" android:icon="@drawable/app_icon_system_application_gallery3d" android:name="com.oplus.gallery.framework.abilities.ocloudsync.ui.CloudSyncAlbumActivity" android:permission="oppo.permission.OPPO_COMPONENT_SAFE" android:resizeableActivity="true" android:screenOrientation="user" android:theme="@style/cloudsync_Theme.CloudSyncAlbum">
++        <activity android:configChanges="keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="true" android:icon="@drawable/app_icon_system_application_gallery3d" android:name="com.oplus.gallery.framework.abilities.ocloudsync.ui.CloudSyncAlbumActivity" android:resizeableActivity="true" android:screenOrientation="user" android:theme="@style/cloudsync_Theme.CloudSyncAlbum">
+             <intent-filter>
+                 <action android:name="coloros.intent.action.view.sync_dir"/>
+                 <category android:name="android.intent.category.DEFAULT"/>
+@@ -836,7 +836,7 @@
+                 <category android:name="android.intent.category.DEFAULT"/>
+             </intent-filter>
+         </activity>
+-        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="true" android:launchMode="singleTop" android:name="com.oplus.gallery.framework.abilities.ocloudsync.ui.CloudSettingsActivity" android:permission="com.oppo.permission.safe.CLOUD" android:resizeableActivity="true" android:taskAffinity="com.oppo.gallery3d.app.Gallery" android:theme="@style/WhiteTheme">
++        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="true" android:launchMode="singleTop" android:name="com.oplus.gallery.framework.abilities.ocloudsync.ui.CloudSettingsActivity" android:resizeableActivity="true" android:taskAffinity="com.oppo.gallery3d.app.Gallery" android:theme="@style/WhiteTheme">
+             <intent-filter>
+                 <action android:name="oplus.intent.action.GALLERY_CLOUD_SETTINGS"/>
+                 <category android:name="android.intent.category.DEFAULT"/>
+@@ -845,7 +845,7 @@
+         <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.oplus.gallery.framework.abilities.ocloudsync.ui.CloudSyncOpenDevicesActivity" android:resizeableActivity="true" android:theme="@style/WhiteTheme"/>
+         <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.oplus.gallery.framework.abilities.ocloudsync.ui.CloudServiceModeActivity" android:resizeableActivity="true" android:theme="@style/WhiteTheme"/>
+         <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.oplus.gallery.framework.abilities.ocloudsync.ui.CloudHistoryDeleteActivity" android:resizeableActivity="true" android:theme="@style/WhiteTheme"/>
+-        <service android:exported="true" android:name="com.oplus.gallery.framework.abilities.ocloudsync.compatible.GallerySyncCompatible" android:permission="heytap.permission.cloud.ACCESS_SYNC_SERVICE">
++        <service android:exported="true" android:name="com.oplus.gallery.framework.abilities.ocloudsync.compatible.GallerySyncCompatible">
+             <meta-data android:name="module" android:value="album"/>
+             <meta-data android:name="hasSmallBinaryFiles" android:value="false"/>
+             <meta-data android:name="isMainModule" android:value="true"/>
+@@ -854,7 +854,7 @@
+                 <category android:name="android.intent.category.default"/>
              </intent-filter>
          </service>
-         <activity android:name="com.customer.feedback.sdk.activity.FeedbackActivity"/>
--        <provider android:authorities="com.oplus.camera.providers.sticker.file.provider" android:exported="false" android:grantUriPermissions="true" android:name="com.oplus.camera.feature.sticker.provider.FileProvider" android:permission="oplus.permission.OPLUS_COMPONENT_SAFE">
-+        <provider android:authorities="com.oplus.camera.providers.sticker.file.provider" android:exported="false" android:grantUriPermissions="true" android:name="com.oplus.camera.feature.sticker.provider.FileProvider">
-             <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/provider_file_paths"/>
-         </provider>
-         <provider android:authorities="com.oplus.camera.entry" android:exported="true" android:name="com.oplus.camera.entry.EntryProvider"/>
-@@ -508,16 +508,16 @@
-         <provider android:authorities="com.oplus.camera.common.fileprovider" android:exported="false" android:grantUriPermissions="true" android:name="androidx.core.content.FileProvider">
-             <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/provider_common_file_paths"/>
-         </provider>
--        <provider android:authorities="com.oplus.camera.gallery.cache.provider" android:exported="true" android:name="com.oplus.camera.component.SandBoxContentProvider" android:permission="com.oplus.camera.sandbox.permission.SANDBOX_PROVIDER"/>
--        <provider android:authorities="com.oplus.camera.fluid.fluidCardWidgetProvider" android:enabled="true" android:exported="true" android:name="com.oplus.camera.feature.basic.fluid.FluidCardWidgetProvider" android:permission="com.oplus.permission.safe.ASSISTANT">
-+        <provider android:authorities="com.oplus.camera.gallery.cache.provider" android:exported="true" android:name="com.oplus.camera.component.SandBoxContentProvider"/>
-+        <provider android:authorities="com.oplus.camera.fluid.fluidCardWidgetProvider" android:enabled="true" android:exported="true" android:name="com.oplus.camera.feature.basic.fluid.FluidCardWidgetProvider">
-             <intent-filter>
-                 <action android:name="com.oplus.seedling.action.SEEDLING_CARD"/>
+-        <service android:exported="true" android:name="com.oplus.gallery.framework.abilities.ocloudsync.compatible.GallerySyncAlbumCompatible" android:permission="heytap.permission.cloud.ACCESS_SYNC_SERVICE">
++        <service android:exported="true" android:name="com.oplus.gallery.framework.abilities.ocloudsync.compatible.GallerySyncAlbumCompatible">
+             <meta-data android:name="module" android:value="album_dir"/>
+             <meta-data android:name="hasFile" android:value="false"/>
+             <meta-data android:name="isMainModule" android:value="false"/>
+@@ -863,7 +863,7 @@
+                 <category android:name="android.intent.category.default"/>
              </intent-filter>
-             <meta-data android:name="oplus.seedling.provider" android:value="DeviceSeedling2Card.upk"/>
+         </service>
+-        <receiver android:exported="true" android:name="com.oplus.gallery.framework.abilities.ocloudsync.account.AccountManager$LoginReceiver" android:permission="oppo.permission.OPPO_COMPONENT_SAFE">
++        <receiver android:exported="true" android:name="com.oplus.gallery.framework.abilities.ocloudsync.account.AccountManager$LoginReceiver">
+             <intent-filter>
+                 <action android:name="com.heytap.usercenter.account_logout"/>
+             </intent-filter>
+@@ -872,7 +872,7 @@
+         <activity android:excludeFromRecents="true" android:exported="false" android:name="com.oplus.gallery.basebiz.uikit.activity.DelegateLaunchingActivity" android:showOnLockScreen="true" android:showWhenLocked="true" android:theme="@style/TransparentTheme"/>
+         <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTop" android:name="com.oplus.gallery.business_lib.ui.activity.CommonWebActivity" android:resizeableActivity="true" android:theme="@style/WhiteTheme"/>
+         <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:exported="false" android:finishOnCloseSystemDialogs="true" android:launchMode="singleInstance" android:name="com.oplus.gallery.business_lib.ui.activity.AuthorizePermissionsActivity" android:theme="@style/TransparentTheme"/>
+-        <activity-alias android:configChanges="keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize" android:exported="true" android:name="com.oplus.gallery.business_lib.ui.activity.AssistantPermissionsActivity" android:permission="com.oplus.permission.safe.ASSISTANT" android:targetActivity="com.oplus.gallery.business_lib.ui.activity.AuthorizePermissionsActivity" android:theme="@style/TransparentTheme">
++        <activity-alias android:configChanges="keyboardHidden|mcc|mnc|orientation|screenLayout|screenSize" android:exported="true" android:name="com.oplus.gallery.business_lib.ui.activity.AssistantPermissionsActivity" android:targetActivity="com.oplus.gallery.business_lib.ui.activity.AuthorizePermissionsActivity" android:theme="@style/TransparentTheme">
+             <intent-filter>
+                 <action android:name="oplus.intent.action.GALLERY_AUTHORIZE_PERMISSIONS"/>
+                 <category android:name="android.intent.category.DEFAULT"/>
+@@ -880,7 +880,7 @@
+         </activity-alias>
+         <meta-data android:name="com.oplus.gallery.AICloudPubKey" android:value="30820122300d06092a864886f70d01010105000382010f003082010a02820101008031d59ced00bb9afc4f7bce11dbf4b53e6458b178c54633eb1f5d9cc30944843b028eab2cdcad764dc4f2a16cfa610dffa3413d4272066c7ff4fce17e8659452d6dc08de1e19e7756e4eff472bd838dad5f3169098319a0808d977275f72e667f4300fe5d67a2668ecf36fffc48601ed216afe8b3c425a6e56c788b8a5fea4590a6deee4159f8716b381ddb245ce244d4f9934c9c8f82b2547340c107bd3e4031df8c728aa76a8709b0358d92cd40ab4ea9ebc975b5d2bd065b6ba0d7405d5581ddd2250de3e3d6977271fe125d1179ef0030a471b5e5dab1ddac49ee1dfbe6d45aa76aded7f1dd9e1d884d63e3d527acd6fe80731a301df4840afafb1438290203010001"/>
+         <meta-data android:name="com.oplus.gallery.oplusAICloudTokenPassword" android:value="402f339f501b4e61b4b6f3e4b13b4518"/>
+-        <provider android:authorities="com.oppo.gallery3d.memoriesprovider" android:exported="true" android:multiprocess="false" android:name="com.oplus.gallery.business_lib.model.data.memories.MemoriesProvider" android:permission="oppo.permission.OPPO_COMPONENT_SAFE">
++        <provider android:authorities="com.oppo.gallery3d.memoriesprovider" android:exported="true" android:multiprocess="false" android:name="com.oplus.gallery.business_lib.model.data.memories.MemoriesProvider">
+             <meta-data android:name="isSupportMemory" android:value="true"/>
          </provider>
-         <meta-data android:name="com.oplus.ocs.card.AUTH_CODE" android:value="ADBFAiAYWRn8nhDUhmNo5Zt+i5lT/VqgTcu+RmDbpdOscWXFkgIhALicg4s4SeWJZQTem2ZcvHrMeCL8OMlMTTZ6eoBvOS5YbJHqIw=="/>
--        <provider android:authorities="com.oplus.camera.gallery.info.provider" android:exported="true" android:name="com.oplus.camera.component.CameraInfoProvider" android:permission="com.oplus.permission.safe.PRIVATE"/>
--        <provider android:authorities="com.oplus.ai.camera.visibility_attr_provider" android:exported="true" android:grantUriPermissions="true" android:name="com.oplus.camera.setting.AiCameraVisibleProvider" android:permission="com.oplus.permission.safe.SETTINGS"/>
-+        <provider android:authorities="com.oplus.camera.gallery.info.provider" android:exported="true" android:name="com.oplus.camera.component.CameraInfoProvider"/>
-+        <provider android:authorities="com.oplus.ai.camera.visibility_attr_provider" android:exported="true" android:grantUriPermissions="true" android:name="com.oplus.camera.setting.AiCameraVisibleProvider"/>
-         <property android:name="android.window.PROPERTY_COMPAT_ALLOW_RESTRICTED_RESIZABILITY" android:value="true"/>
-         <uses-library android:name="com.oplus.camera.unit.sdk" android:required="false"/>
-         <provider android:authorities="com.oplus.camera.fileprovider" android:exported="false" android:grantUriPermissions="true" android:name="com.oplus.scanengine.router.ShareFileProvider">
-@@ -559,7 +559,7 @@
-         <meta-data android:name="com.oplus.support:api-adapter" android:value="13.0.0"/>
-         <meta-data android:name="protocol_version_codes" android:value="207"/>
-         <meta-data android:name="com.oplus.appplatform:sysapi" android:value="13.0.4"/>
--        <provider android:authorities="com.oplus.camera.oplus.epona" android:directBootAware="true" android:exported="true" android:multiprocess="true" android:name="com.oplus.epona.internal.EponaProvider" android:permission="com.oplus.permission.safe.SECURITY"/>
-+        <provider android:authorities="com.oplus.camera.oplus.epona" android:directBootAware="true" android:exported="true" android:multiprocess="true" android:name="com.oplus.epona.internal.EponaProvider"/>
+         <service android:enabled="true" android:exported="false" android:name="com.oplus.gallery.business_lib.livesticker.LiveStickerBgMattingTaskService" android:stopWithTask="false"/>
+@@ -891,7 +891,7 @@
+         <provider android:authorities="com.oplus.gallery.FileProvider" android:exported="false" android:grantUriPermissions="true" android:name="com.oplus.gallery.foundation.fileaccess.GalleryFileProvider">
+             <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/common_file_paths"/>
+         </provider>
+-        <provider android:authorities="com.oplus.gallery.multiprocess.sharepreference" android:exported="true" android:name="com.oplus.gallery.basebiz.provider.MultiProcessSpProvider" android:permission="oppo.permission.OPPO_COMPONENT_SAFE"/>
++        <provider android:authorities="com.oplus.gallery.multiprocess.sharepreference" android:exported="true" android:name="com.oplus.gallery.basebiz.provider.MultiProcessSpProvider"/>
+         <meta-data android:name="SLP_APPKEY" android:value="jAkUqZgciL"/>
+         <meta-data android:name="SLP_SECRETKEY" android:value="zUfGGiiolAQXjRfWpZAyPWiAPAIQlQMF"/>
+         <meta-data android:name="SLP_CODE" android:value="kjFwAAAFlBMQ8AAAAAAAAAAFwAAACA8xhkAAAAAPtr4mUAAAAAOGFlNmM5ZjIxZjFlZGFlZTE1YTU0NjllYmQ5YTM1ZDI4ODJiNTQwZTQxZmYxNGU1AAAAAAH/AP8wRAIgEHmMOAxhbTDEi1IpWIcdOuoHjtXeAFySlZYkp3wAbEcCIG8ile3kU6tRccoP+WoU3pYme5QCwCcLzC0wIdITYgp7AAAAAC5G"/>
+@@ -910,7 +910,7 @@
+         <provider android:authorities="com.oplus.gallery.database.provider.cache" android:exported="false" android:multiprocess="false" android:name="com.oplus.gallery.foundation.database.provider.CacheProvider"/>
+         <provider android:authorities="com.oplus.gallery.database.provider.watermark_master" android:exported="false" android:multiprocess="false" android:name="com.oplus.gallery.foundation.database.provider.WatermarkMasterProvider"/>
+         <service android:enabled="true" android:exported="false" android:foregroundServiceType="dataSync" android:name="com.oplus.gallery.standard_lib.scheduler.KeepAliveService"/>
+-        <provider android:authorities="com.oplus.gallery.foundation.util.multiprocess.CrossProcessFileProvider" android:exported="true" android:grantUriPermissions="true" android:name="com.oplus.gallery.foundation.util.multiprocess.CrossProcessFileProvider" android:permission="com.oplus.permission.safe.READ_COMMON">
++        <provider android:authorities="com.oplus.gallery.foundation.util.multiprocess.CrossProcessFileProvider" android:exported="true" android:grantUriPermissions="true" android:name="com.oplus.gallery.foundation.util.multiprocess.CrossProcessFileProvider">
+             <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"/>
+         </provider>
+         <meta-data android:name="upd_cloudKit_libcommon" android:value="2.10.4"/>
+@@ -973,7 +973,7 @@
+         <meta-data android:name="sau_aar_version_code" android:value="4003"/>
+         <meta-data android:name="sau_aar_version_name" android:value="4.0.3-beta94743ae"/>
+         <meta-data android:name="com.oplus.support:api-adapter" android:value="13.3.2"/>
+-        <provider android:authorities="com.coloros.gallery3d.epona" android:directBootAware="true" android:exported="true" android:multiprocess="true" android:name="com.heytap.epona.internal.EponaProvider" android:permission="com.oppo.permission.safe.SECURITY"/>
++        <provider android:authorities="com.coloros.gallery3d.epona" android:directBootAware="true" android:exported="true" android:multiprocess="true" android:name="com.heytap.epona.internal.EponaProvider"/>
+         <service android:directBootAware="true" android:exported="false" android:name="androidx.room.MultiInstanceInvalidationService"/>
+         <provider android:authorities="com.coloros.gallery3d.UCAccountSDKInitProvider" android:enabled="true" android:exported="false" android:multiprocess="true" android:name="com.heytap.usercenter.accountsdk.utils.UCAccountSDKInitProvider"/>
+         <receiver android:exported="false" android:name="com.heytap.usercenter.accountsdk.utils.app.UserCenterOperateReceiver">
+@@ -1004,7 +1004,7 @@
+         <meta-data android:name="sdkVersion" android:value="3000"/>
+         <meta-data android:name="dependencies:implementation:com.oplus.coreapp.appfeature:AppFeatureHelper" android:value="1.1.1"/>
+         <meta-data android:name="com.oplus.appplatform:sysapi" android:value="13.0.3"/>
+-        <provider android:authorities="com.coloros.gallery3d.oplus.epona" android:directBootAware="true" android:exported="true" android:multiprocess="true" android:name="com.oplus.epona.internal.EponaProvider" android:permission="com.oplus.permission.safe.SECURITY"/>
++        <provider android:authorities="com.coloros.gallery3d.oplus.epona" android:directBootAware="true" android:exported="true" android:multiprocess="true" android:name="com.oplus.epona.internal.EponaProvider"/>
          <meta-data android:name="com.oplus.epona:epona" android:value="2.6.2"/>
-         <provider android:authorities="com.oplus.camera.tingle" android:directBootAware="true" android:exported="false" android:multiprocess="true" android:name="com.oplus.tingle.ipc.internal.TingleProvider"/>
+         <provider android:authorities="com.coloros.gallery3d.tingle" android:directBootAware="true" android:exported="false" android:multiprocess="true" android:name="com.oplus.tingle.ipc.internal.TingleProvider"/>
          <meta-data android:name="com.oplus.tingle:tingle" android:value="3.1.0"/>
--- 
-2.55.0
