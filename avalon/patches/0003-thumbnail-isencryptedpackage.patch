@@ -1,3 +1,27 @@
+From b25ad8bc3fc3fc268670d7330fad1198d205723a Mon Sep 17 00:00:00 2001
+From: EternalMikaelson <klaus_mikaelson@rediffmail.com>
+Date: Mon, 14 Sep 2026 06:07:50 +0000
+Subject: [PATCH 3/3] thumbnail: isencryptedpackage
+
+OplusCamera's isEncryptedPackage helper (f6/l0->l) goes through
+com.oplus.app.OPlusAccessControlManager. AxionAOSP or any other AOSP rom resolves that against the
+oplus-fwk stub in hardware/oplus, whose isEncryptedPackage() returns true
+unconditionally, so every package reads as private-safe media and ThumbnailUI
+clears the last-shot thumbnail.
+
+Symptom on avalon: take a photo and the thumbnail appears; tap it to open the
+gallery, come back, and the thumbnail is a flat grey placeholder until the next
+capture.
+
+Short-circuit the helper to false. Ported from the aston/OP12R tree
+(patches/0002, d6/g0->l there); obfuscation moved the class to f6/l0 on avalon
+
+Change-Id: I074eb60ebb9ade9aa5166b7792b2ea028f37d7f7
+Signed-off-by: EternalMikaelson <klaus_mikaelson@rediffmail.com>
+---
+ smali/f6/l0.smali | 40 +---------------------------------------
+ 1 file changed, 1 insertion(+), 39 deletions(-)
+
 diff --git a/smali/f6/l0.smali b/smali/f6/l0.smali
 index 95c2dd1d..451c1c62 100644
 --- a/smali/f6/l0.smali
@@ -52,3 +76,6 @@ index 95c2dd1d..451c1c62 100644
      return p0
  .end method
  
+-- 
+2.43.0
+

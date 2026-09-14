@@ -1,7 +1,7 @@
-From 869755b7b4d3896cc74fb84e3edff6396ae32a36 Mon Sep 17 00:00:00 2001
+From 66187312344913f496764ce4bcc35b0a17dde4fa Mon Sep 17 00:00:00 2001
 From: Hecheng Yu <kde-yyds@qq.com>
 Date: Wed, 3 Jun 2026 21:10:21 +0800
-Subject: [PATCH 3/5] ActionReceiver: Inject RECEIVER_NOT_EXPORTED when running
+Subject: [PATCH 1/4] ActionReceiver: Inject RECEIVER_NOT_EXPORTED when running
  registerReceiver()
 
 E AndroidRuntime: java.lang.SecurityException: com.oneplus.gallery: One of RECEIVER_EXPORTED or RECEIVER_NOT_EXPORTED should be specified when a receiver isn't being registered exclusively for system broadcasts
@@ -62,4 +62,5 @@ index 9c3b3cd98..4139166b9 100644
  .end method
  
 -- 
-2.55.0
+2.43.0
+
