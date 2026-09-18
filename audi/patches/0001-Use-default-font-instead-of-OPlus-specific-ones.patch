@@ -1,8 +1,11 @@
+From 8884f5ccbe293012154d750ad99cc6f19685da13 Mon Sep 17 00:00:00 2001
 From: EternalMikaelson <klaus_mikaelson@rediffmail.com>
-Date: Fri, 15 Aug 2026 13:59:00 +0800
-Subject: [PATCH] Use default font instead of OPlus specific ones
+Date: Sat, 15 Aug 2026 13:59:00 +0800
+Subject: [PATCH 1/2] Use default font instead of OPlus specific ones
 
 ---
+ smali/u6/c4.smali | 295 +---------------------------------------------
+ 1 file changed, 3 insertions(+), 292 deletions(-)
 
 diff --git a/smali/u6/c4.smali b/smali/u6/c4.smali
 index 424189ae..06393eda 100644
@@ -312,3 +315,6 @@ index 424189ae..06393eda 100644
  .end method
  
  .method public static b()Landroid/graphics/Typeface;
+-- 
+2.43.0
+
