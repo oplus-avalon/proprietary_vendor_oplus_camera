@@ -1,5 +1,17 @@
+From fc8a99ddae503adb56c687ce0c7def4c22055562 Mon Sep 17 00:00:00 2001
+From: EternalMikaelson <klaus_mikaelson@rediffmail.com>
+Date: Fri, 18 Sep 2026 06:09:51 +0000
+Subject: [PATCH 1/3] ActionReceiver: Inject RECEIVER_NOT_EXPORTED when running
+ registerReceiver()
+
+Change-Id: I4fc0d30de5d29c1476f266d003e41d50b6b5a230
+Signed-off-by: EternalMikaelson <klaus_mikaelson@rediffmail.com>
+---
+ .../foundation/uikit/broadcast/bus/ActionReceiver.smali  | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
 diff --git a/smali_classes2/com/oplus/gallery/foundation/uikit/broadcast/bus/ActionReceiver.smali b/smali_classes2/com/oplus/gallery/foundation/uikit/broadcast/bus/ActionReceiver.smali
-index 61ae1c744..d31618619 100644
+index e507fb400..3cd285ac3 100644
 --- a/smali_classes2/com/oplus/gallery/foundation/uikit/broadcast/bus/ActionReceiver.smali
 +++ b/smali_classes2/com/oplus/gallery/foundation/uikit/broadcast/bus/ActionReceiver.smali
 @@ -153,6 +153,15 @@
@@ -18,3 +30,6 @@ index 61ae1c744..d31618619 100644
      move-object v3, p0
  
      invoke-virtual/range {v2 .. v7}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;I)Landroid/content/Intent;
+-- 
+2.43.0
+
