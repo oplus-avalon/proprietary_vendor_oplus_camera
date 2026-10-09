@@ -1,7 +1,7 @@
 From 0c11268d60350d4fc03f3cb59310c0476f08c1ba Mon Sep 17 00:00:00 2001
 From: EternalMikaelson <klaus_mikaelson@rediffmail.com>
 Date: Mon, 14 Sep 2026 11:13:40 +0000
-Subject: [PATCH 2/3] manifest: Get rid of oplus permissions
+Subject: [PATCH 2/4] manifest: Get rid of oplus permissions
 
 Change-Id: Ia927ecb9fb62e6f8a26cf02eeaa62d40caccde2f
 Signed-off-by: EternalMikaelson <klaus_mikaelson@rediffmail.com>

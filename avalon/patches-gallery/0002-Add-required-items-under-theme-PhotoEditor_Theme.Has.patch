@@ -1,7 +1,7 @@
 From 8909236abc1582e3a8857ba0de9072227012fa31 Mon Sep 17 00:00:00 2001
 From: Hecheng Yu <kde-yyds@qq.com>
 Date: Fri, 5 Jun 2026 16:07:29 +0800
-Subject: [PATCH 2/4] Add required items under theme PhotoEditor_Theme.Hassel
+Subject: [PATCH 2/5] Add required items under theme PhotoEditor_Theme.Hassel
 
 ---
  res/values/styles.xml | 5 +++++
