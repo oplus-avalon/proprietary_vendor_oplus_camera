@@ -1,7 +1,7 @@
 From 9acdd12cb6cafe33cd9b79157d6a1545d939fc60 Mon Sep 17 00:00:00 2001
 From: Hecheng Yu <kde-yyds@qq.com>
 Date: Wed, 1 Jul 2026 17:01:28 +0800
-Subject: [PATCH 3/4] gallery: Enable Live Photos
+Subject: [PATCH 3/5] gallery: Enable Live Photos
 
 ---
  .../com/oplus/aiunit/vision/gs5.smali         | 85 ++++++++++++++++++-

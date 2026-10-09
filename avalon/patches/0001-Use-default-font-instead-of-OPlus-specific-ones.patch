@@ -1,7 +1,7 @@
 From ab9fec252beb332f562e349bc8296708a7dc4af1 Mon Sep 17 00:00:00 2001
 From: EternalMikaelson <klaus_mikaelson@rediffmail.com>
 Date: Sat, 15 Aug 2026 13:59:00 +0800
-Subject: [PATCH 1/3] Use default font instead of OPlus specific ones
+Subject: [PATCH 1/4] Use default font instead of OPlus specific ones
 
 ---
  smali/f6/q3.smali | 295 +---------------------------------------------

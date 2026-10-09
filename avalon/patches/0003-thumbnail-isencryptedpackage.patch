@@ -1,7 +1,7 @@
 From b25ad8bc3fc3fc268670d7330fad1198d205723a Mon Sep 17 00:00:00 2001
 From: EternalMikaelson <klaus_mikaelson@rediffmail.com>
 Date: Mon, 14 Sep 2026 06:07:50 +0000
-Subject: [PATCH 3/3] thumbnail: isencryptedpackage
+Subject: [PATCH 3/4] thumbnail: isencryptedpackage
 
 OplusCamera's isEncryptedPackage helper (f6/l0->l) goes through
 com.oplus.app.OPlusAccessControlManager. AxionAOSP or any other AOSP rom resolves that against the
