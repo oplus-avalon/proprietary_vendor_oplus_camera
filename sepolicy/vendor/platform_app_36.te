@@ -1,0 +1,3 @@
+# Gallery's Adreno driver uses QSPM. Match the existing Qualcomm platform_app
+# client policy for the new platform_app_36 domain.
+hal_client_domain(platform_app_36, vendor_hal_qspmhal)
