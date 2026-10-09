@@ -1,0 +1,6 @@
+# OnePlus Gallery runs in platform_app_36 and queries Horae thermal state.
+binder_call(platform_app_36, horae)
+
+# Gallery receives an already-open quick-thumbnail FD from the camera provider.
+# Permit reading that FD without granting access to the camera's data directory.
+allow platform_app_36 opluscamera_app_data_file:file read;

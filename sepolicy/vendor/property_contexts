@@ -14,3 +14,37 @@ ro.oplus.key.actionbutton           u:object_r:vendor_camera_prop:s0
 ro.oplus.flashlight.rio.switch      u:object_r:vendor_camera_prop:s0
 ro.vendor.oplus.market.name         u:object_r:vendor_camera_prop:s0
 ro.vendor.oplus.market.enname       u:object_r:vendor_camera_prop:s0
+
+# ArcSoft HDR and ODNN properties read by the camera's in-process libraries.
+# Reuse the camera property type, which opluscamera_app can already read.
+persist.vendor.arcsoft.turbohdr.dumprawinfo             u:object_r:vendor_camera_prop:s0 exact string
+vendor.arcsoft.turboHDR.Init.MaxNPULevel                 u:object_r:vendor_camera_prop:s0 exact string
+vendor.arcsoft.turboHDR.NPUPowerLevel                    u:object_r:vendor_camera_prop:s0 exact string
+vendor.arcsoft.turboHDR.Process.MaxNPULevel              u:object_r:vendor_camera_prop:s0 exact string
+vendor.arcsoft.turboHDR.Process.NPUPowerLevel            u:object_r:vendor_camera_prop:s0 exact string
+vendor.arcsoft.turboHDR.Process.color_gamut_type         u:object_r:vendor_camera_prop:s0 exact string
+vendor.arcsoft.turbo_hdr.input_mode                     u:object_r:vendor_camera_prop:s0 exact string
+vendor.arcsoft.turbo_hdr_aisr_thread_num                 u:object_r:vendor_camera_prop:s0 exact string
+vendor.arcsoft.turbo_hdr_algmodel                        u:object_r:vendor_camera_prop:s0 exact string
+vendor.arcsoft.turbo_hdr_dump_bokeh                      u:object_r:vendor_camera_prop:s0 exact string
+vendor.arcsoft.turbo_hdr_force_id                        u:object_r:vendor_camera_prop:s0 exact string
+vendor.arcsoft.turbo_hdr_forcemode                       u:object_r:vendor_camera_prop:s0 exact string
+vendor.arcsoft.turbo_hdr_gpu_hint                        u:object_r:vendor_camera_prop:s0 exact string
+vendor.arcsoft.turbo_hdr_low_aid_model_thread_num         u:object_r:vendor_camera_prop:s0 exact string
+vendor.arcsoft.turbo_hdr_stepmask                        u:object_r:vendor_camera_prop:s0 exact string
+vendor.arcsoft.turbohdr_16Workingbuffer                  u:object_r:vendor_camera_prop:s0 exact string
+vendor.arcsoft.turbohdr_cameramode                       u:object_r:vendor_camera_prop:s0 exact string
+vendor.arcsoft.turbohdr_isHardCopy                       u:object_r:vendor_camera_prop:s0 exact string
+vendor.media.odnn.log_level                             u:object_r:vendor_camera_prop:s0 exact string
+
+# ArcSoft portrait and fusion raw processing properties.
+persist.vendor.arcsoft.tfrsn.dumprawinfo                 u:object_r:vendor_camera_prop:s0 exact string
+vendor.arcsoft.dualcam_bokeh_forcemode                   u:object_r:vendor_camera_prop:s0 exact string
+vendor.arcsoft.dualcam_bokeh_stepbypass                  u:object_r:vendor_camera_prop:s0 exact string
+vendor.arcsoft.sn_16Workingbuffer                       u:object_r:vendor_camera_prop:s0 exact string
+vendor.arcsoft.tfrsn.NPUPowerLevel                       u:object_r:vendor_camera_prop:s0 exact string
+vendor.arcsoft.tfrsn.forcemode                          u:object_r:vendor_camera_prop:s0 exact string
+vendor.arcsoft.tfrsn.stepmask                           u:object_r:vendor_camera_prop:s0 exact string
+vendor.arcsoft.tfrsn_cameramode                         u:object_r:vendor_camera_prop:s0 exact string
+vendor.arcsoft.tfrsn_isHardCopy                         u:object_r:vendor_camera_prop:s0 exact string
+vendor.arcsoft.turbo_hdr_bokeh_loglevel                  u:object_r:vendor_camera_prop:s0 exact string
