@@ -1,4 +1,4 @@
-From 9488ed1dcdf0a6c531780b7dd8bd4850092fc018 Mon Sep 17 00:00:00 2001
+From bc916cd29d803dcdb99da2783d369d6af059ed03 Mon Sep 17 00:00:00 2001
 From: Hecheng Yu <kde-yyds@qq.com>
 Date: Fri, 5 Jun 2026 16:07:29 +0800
 Subject: [PATCH 2/3] Add required items under theme PhotoEditor_Theme.Hassel
@@ -8,10 +8,10 @@ Subject: [PATCH 2/3] Add required items under theme PhotoEditor_Theme.Hassel
  1 file changed, 3 insertions(+)
 
 diff --git a/res/values/styles.xml b/res/values/styles.xml
-index 02298921e..ac7219f62 100644
+index 498b07d51..19904f95e 100644
 --- a/res/values/styles.xml
 +++ b/res/values/styles.xml
-@@ -6977,6 +6977,9 @@
+@@ -6944,6 +6944,9 @@
          <item name="couiColorPrimaryTextOnPopup">@color/coui_color_primary_on_popup_orange_light</item>
          <item name="couiColorSecondary">@color/coui_color_secondary_orange_light</item>
          <item name="videoEditorActionBarDoneTextColorPressed">@color/action_bar_done_text_color_pressed_hassel</item>

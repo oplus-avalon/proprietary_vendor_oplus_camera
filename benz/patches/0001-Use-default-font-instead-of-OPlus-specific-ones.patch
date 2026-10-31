@@ -1,16 +1,23 @@
-From 8884f5ccbe293012154d750ad99cc6f19685da13 Mon Sep 17 00:00:00 2001
+From 0420f509bf25541b7438b55fff3bb88b84ca22b8 Mon Sep 17 00:00:00 2001
 From: EternalMikaelson <klaus_mikaelson@rediffmail.com>
-Date: Sat, 15 Aug 2026 13:59:00 +0800
+Date: Sat, 31 Oct 2026 12:50:56 +0000
 Subject: [PATCH 1/2] Use default font instead of OPlus specific ones
 
+The font helper resolves the typeface through OplusBaseConfiguration
+and OplusFontUtils, which don't exist on AOSP and break text
+rendering. Replace the method body with a direct return of
+Typeface.DEFAULT.
+
+Change-Id: I4ce424c2aad66c366dae983819db845ec49112f7
+Signed-off-by: EternalMikaelson <klaus_mikaelson@rediffmail.com>
 ---
- smali/u6/c4.smali | 295 +---------------------------------------------
+ smali/d6/t3.smali | 295 +---------------------------------------------
  1 file changed, 3 insertions(+), 292 deletions(-)
 
-diff --git a/smali/u6/c4.smali b/smali/u6/c4.smali
-index 424189ae..06393eda 100644
---- a/smali/u6/c4.smali
-+++ b/smali/u6/c4.smali
+diff --git a/smali/d6/t3.smali b/smali/d6/t3.smali
+index 8d2af4d2..266ab45d 100644
+--- a/smali/d6/t3.smali
++++ b/smali/d6/t3.smali
 @@ -263,300 +263,11 @@
  .end method
  
@@ -18,7 +25,7 @@ index 424189ae..06393eda 100644
 -    .locals 6
 -
 -    .line 1
--    sget-object v0, Lu6/o0;->a:Landroid/graphics/Typeface;
+-    sget-object v0, Ld6/l0;->a:Landroid/graphics/Typeface;
 -
 -    .line 2
 -    .line 3
@@ -119,7 +126,7 @@ index 424189ae..06393eda 100644
 -    .line 48
 -    .line 49
 -    :try_start_1
--    sget-boolean v3, Lu6/c4;->q:Z
+-    sget-boolean v3, Ld6/t3;->q:Z
 -
 -    .line 50
 -    .line 51
@@ -200,7 +207,7 @@ index 424189ae..06393eda 100644
 -
 -    .line 87
 -    :cond_0
--    sget-boolean p0, Lu6/c4;->q:Z
+-    sget-boolean p0, Ld6/t3;->q:Z
 -
 -    .line 88
 -    .line 89
@@ -246,7 +253,7 @@ index 424189ae..06393eda 100644
 -
 -    .line 106
 -    .line 107
--    invoke-static {v0, v1, p0}, Lk7/b;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+-    invoke-static {v0, v1, p0}, Lu6/a;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 -    :try_end_2
 -    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_0
 -    .catch Ljava/lang/NoSuchMethodError; {:try_start_2 .. :try_end_2} :catch_0
@@ -292,20 +299,20 @@ index 424189ae..06393eda 100644
 -    move-result-object p0
 -
 -    .line 129
--    invoke-static {v0, p0}, Lk7/b;->h(Ljava/lang/String;Ljava/lang/String;)V
+-    invoke-static {v0, p0}, Lu6/a;->h(Ljava/lang/String;Ljava/lang/String;)V
 -
 -    .line 130
 -    .line 131
 -    .line 132
 -    :cond_1
 -    :goto_2
--    sput-object v2, Lu6/o0;->a:Landroid/graphics/Typeface;
+-    sput-object v2, Ld6/l0;->a:Landroid/graphics/Typeface;
 +    .locals 1
  
 -    .line 133
 -    .line 134
 -    :cond_2
--    sget-object p0, Lu6/o0;->a:Landroid/graphics/Typeface;
+-    sget-object p0, Ld6/l0;->a:Landroid/graphics/Typeface;
 +    sget-object v0, Landroid/graphics/Typeface;->DEFAULT:Landroid/graphics/Typeface;
  
 -    .line 135

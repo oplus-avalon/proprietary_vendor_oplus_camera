@@ -1,22 +1,27 @@
-From fc8a99ddae503adb56c687ce0c7def4c22055562 Mon Sep 17 00:00:00 2001
+From 921949bcf74f321029a788b1e7de6a716c5a1287 Mon Sep 17 00:00:00 2001
 From: EternalMikaelson <klaus_mikaelson@rediffmail.com>
-Date: Fri, 18 Sep 2026 06:09:51 +0000
+Date: Sat, 31 Oct 2026 12:56:08 +0000
 Subject: [PATCH 1/3] ActionReceiver: Inject RECEIVER_NOT_EXPORTED when running
  registerReceiver()
 
-Change-Id: I4fc0d30de5d29c1476f266d003e41d50b6b5a230
+registerReceiver() is called with a flags value that carries neither
+RECEIVER_EXPORTED nor RECEIVER_NOT_EXPORTED, which newer Android
+rejects for non-system receivers. If neither bit (0x6) is set in the
+flags int, OR in RECEIVER_NOT_EXPORTED (0x4) right before the call.
+
+Change-Id: I855138ea577032c0e649a239ed94b9881e8b0248
 Signed-off-by: EternalMikaelson <klaus_mikaelson@rediffmail.com>
 ---
  .../foundation/uikit/broadcast/bus/ActionReceiver.smali  | 9 +++++++++
  1 file changed, 9 insertions(+)
 
 diff --git a/smali_classes2/com/oplus/gallery/foundation/uikit/broadcast/bus/ActionReceiver.smali b/smali_classes2/com/oplus/gallery/foundation/uikit/broadcast/bus/ActionReceiver.smali
-index e507fb400..3cd285ac3 100644
+index 4f7e430d8..4b710d407 100644
 --- a/smali_classes2/com/oplus/gallery/foundation/uikit/broadcast/bus/ActionReceiver.smali
 +++ b/smali_classes2/com/oplus/gallery/foundation/uikit/broadcast/bus/ActionReceiver.smali
-@@ -153,6 +153,15 @@
- 
-     iget v7, v0, Lcom/oplus/aiunit/vision/zz0;->c:I
+@@ -189,6 +189,15 @@
+     .line 61
+     iget v7, v0, Lcom/oplus/aiunit/vision/rx0;->c:I
  
 +    # --- START PATCH: conditionally add RECEIVER_NOT_EXPORTED (0x4) ---
 +    and-int/lit8 v0, v7, 0x6        # 0x6 = 0x2 | 0x4 (both export flags)
@@ -29,7 +34,7 @@ index e507fb400..3cd285ac3 100644
 +    # --- END PATCH ---
      move-object v3, p0
  
-     invoke-virtual/range {v2 .. v7}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;I)Landroid/content/Intent;
+     .line 64
 -- 
 2.43.0
 
