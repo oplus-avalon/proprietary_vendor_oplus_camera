@@ -1,0 +1,37 @@
+//
+// Automatically generated file. DO NOT MODIFY
+//
+
+soong_namespace {
+    imports: [
+        "vendor/oplus/camera/benz/blobs",
+        "hardware/oplus",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.oplus.hardware.cameraextension@1.0",
+    owner: "oplus/camera/benz",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system/lib64/vendor.oplus.hardware.cameraextension@1.0.so",
+            ],
+            shared_libs: [
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+}
