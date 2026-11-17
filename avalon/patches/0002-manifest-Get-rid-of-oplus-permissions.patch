@@ -8,9 +8,12 @@ Signed-off-by: EternalMikaelson <klaus_mikaelson@rediffmail.com>
 ---
  AndroidManifest.xml | 58 ++++++++++++++++++++++-----------------------
  1 file changed, 29 insertions(+), 29 deletions(-)
+---
+ AndroidManifest.xml | 58 ++++++++++++++++++++++-----------------------
+ 1 file changed, 29 insertions(+), 29 deletions(-)
 
 diff --git a/AndroidManifest.xml b/AndroidManifest.xml
-index f10014c5..9572eb75 100644
+index 4cd47b3c..7872d322 100644
 --- a/AndroidManifest.xml
 +++ b/AndroidManifest.xml
 @@ -180,17 +180,17 @@
@@ -34,7 +37,7 @@ index f10014c5..9572eb75 100644
              <intent-filter>
                  <action android:name="com.heytap.accessory.streamconnection"/>
              </intent-filter>
-@@ -241,7 +241,7 @@
+@@ -242,7 +242,7 @@
              <meta-data android:name="com.android.keyguard.layout" android:resource="@layout/start_fake_layout"/>
              <meta-data android:name="com.android.keyguard.layout.none.fold.remap" android:resource="@layout/start_fake_layout_none_fold_remap"/>
          </activity>
@@ -43,7 +46,7 @@ index f10014c5..9572eb75 100644
              <intent-filter>
                  <action android:name="oplus.media.action.STILL_IMAGE_CAMERA"/>
                  <category android:name="android.intent.category.DEFAULT"/>
-@@ -250,7 +250,7 @@
+@@ -251,7 +251,7 @@
              <meta-data android:name="com.android.keyguard.layout" android:resource="@layout/start_fake_layout"/>
              <meta-data android:name="com.android.keyguard.layout.none.fold.remap" android:resource="@layout/start_fake_layout_none_fold_remap"/>
          </activity>
@@ -52,7 +55,7 @@ index f10014c5..9572eb75 100644
              <intent-filter>
                  <action android:name="oplus.media.action.STILL_IMAGE_CAMERA_SECURE"/>
                  <category android:name="android.intent.category.DEFAULT"/>
-@@ -280,21 +280,21 @@
+@@ -275,21 +275,21 @@
                  <category android:name="android.intent.category.DEFAULT"/>
              </intent-filter>
          </activity>
@@ -77,7 +80,7 @@ index f10014c5..9572eb75 100644
              <intent-filter>
                  <action android:name="oplus.intent.action.AUTO_QUICK_CAPTURE_SET"/>
                  <category android:name="android.intent.category.DEFAULT"/>
-@@ -309,32 +309,32 @@
+@@ -304,32 +304,32 @@
              <meta-data android:name="com.android.settings.APP_PRIORITY" android:value="30010"/>
          </activity>
          <activity android:configChanges="mcc|mnc|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale" android:exported="false" android:launchMode="singleTop" android:name="com.oplus.camera.setting.ScreenOffActivity" android:resizeableActivity="false" android:screenOrientation="behind" android:showWhenLocked="true" android:taskAffinity="com.oplus.camera" android:theme="@style/ThemeCamera.FullScreen" android:windowSoftInputMode="stateAlwaysHidden|adjustPan"/>
@@ -115,7 +118,7 @@ index f10014c5..9572eb75 100644
              <intent-filter>
                  <action android:name="oplus.intent.action.APP_SETTINGS"/>
                  <category android:name="android.intent.category.DEFAULT"/>
-@@ -349,7 +349,7 @@
+@@ -344,7 +344,7 @@
              </intent-filter>
              <meta-data android:name="com.android.settings.APP_PRIORITY" android:value="30010"/>
          </activity>
@@ -124,7 +127,7 @@ index f10014c5..9572eb75 100644
              <intent-filter>
                  <action android:name="com.oplus.setting.ai.action.SETTING_ENTRANCE"/>
                  <category android:name="android.intent.category.DEFAULT"/>
-@@ -362,7 +362,7 @@
+@@ -357,7 +357,7 @@
              <meta-data android:name="com.oplus.setting.ai.PROVIDER" android:value="com.oplus.ai.camera.visibility_attr_provider"/>
              <meta-data android:name="com.oplus.setting.ai.PRIORITY" android:value="1"/>
          </activity>
@@ -133,7 +136,7 @@ index f10014c5..9572eb75 100644
              <intent-filter>
                  <action android:name="oplus.intent.action.APPDebug"/>
                  <category android:name="android.intent.category.DEFAULT"/>
-@@ -380,12 +380,12 @@
+@@ -375,12 +375,12 @@
                  <action android:name="android.intent.action.CAMERA_BUTTON"/>
              </intent-filter>
          </receiver>
@@ -148,7 +151,7 @@ index f10014c5..9572eb75 100644
              <intent-filter>
                  <action android:name="com.oplus.action.PRE_LOAD_CAMERA"/>
              </intent-filter>
-@@ -413,12 +413,12 @@
+@@ -411,12 +411,12 @@
                  <category android:name="android.intent.category.DEFAULT"/>
              </intent-filter>
          </activity>
@@ -163,7 +166,7 @@ index f10014c5..9572eb75 100644
              <intent-filter>
                  <action android:name="com.camera.action.START_APS_SERVICE"/>
              </intent-filter>
-@@ -428,34 +428,34 @@
+@@ -426,34 +426,34 @@
                  <action android:name="android.service.quicksettings.action.QS_TILE"/>
              </intent-filter>
          </service>
@@ -207,7 +210,7 @@ index f10014c5..9572eb75 100644
          <property android:name="android.window.PROPERTY_COMPAT_ALLOW_RESTRICTED_RESIZABILITY" android:value="true"/>
          <uses-library android:name="com.oplus.camera.unit.sdk" android:required="false"/>
          <provider android:authorities="com.oplus.camera.fileprovider" android:exported="false" android:grantUriPermissions="true" android:name="com.oplus.scanengine.router.ShareFileProvider">
-@@ -493,7 +493,7 @@
+@@ -491,7 +491,7 @@
          <meta-data android:name="com.oplus.support:api-adapter" android:value="13.0.0"/>
          <meta-data android:name="protocol_version_codes" android:value="142"/>
          <meta-data android:name="com.oplus.appplatform:sysapi" android:value="13.0.4"/>
@@ -217,5 +220,5 @@ index f10014c5..9572eb75 100644
          <provider android:authorities="com.oplus.camera.tingle" android:directBootAware="true" android:exported="false" android:multiprocess="true" android:name="com.oplus.tingle.ipc.internal.TingleProvider"/>
          <meta-data android:name="com.oplus.tingle:tingle" android:value="3.1.0"/>
 -- 
-2.43.0
+2.53.0
 
