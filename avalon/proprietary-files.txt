@@ -193,3 +193,4 @@ odm/lib64/libsdk_sr_ref.so
 system_ext/lib64/liboplusgui_jni.so
 
 system/lib64/libbase.so:system_ext/lib64/libbase-stock.so;FIX_SONAME
+system_ext/lib64/libsqlcipher.so
