@@ -1,0 +1,77 @@
+From a240f8b4573da4cbb25f946b0bfee70fdf0b0a14 Mon Sep 17 00:00:00 2001
+From: EternalMikaelson <klaus_mikaelson@rediffmail.com>
+Date: Wed, 18 Nov 2026 17:12:59 +0530
+Subject: [PATCH 4/4] gallery: Enable Live Photos
+
+Change-Id: I05792babf7f472546d549884e215e8ae62605a45
+Signed-off-by: EternalMikaelson <klaus_mikaelson@rediffmail.com>
+---
+ smali/com/oplus/aiunit/vision/hda.smali | 41 ++++++++++++++++++++++++-
+ 1 file changed, 40 insertions(+), 1 deletion(-)
+
+diff --git a/smali/com/oplus/aiunit/vision/hda.smali b/smali/com/oplus/aiunit/vision/hda.smali
+index 6635e03b1..db13f7625 100644
+--- a/smali/com/oplus/aiunit/vision/hda.smali
++++ b/smali/com/oplus/aiunit/vision/hda.smali
+@@ -118,10 +118,12 @@
+ .end method
+ 
+ .method public static final c(Ljava/lang/String;ZZ)Z
+-    .locals 3
++    .locals 4
+     .annotation runtime Lkotlin/jvm/JvmStatic;
+     .end annotation
+ 
++    move-object v3, p0
++
+     const-string v0, "configId"
+ 
+     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+@@ -214,7 +216,44 @@
+ 
+     invoke-static {p1, p0, v0, v1}, Lcom/oplus/aiunit/vision/ig5;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+ 
++    const-string v0, "feature_is_support_olive"
++
++    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
++
++    move-result v1
++
++    if-nez v1, :cond_olive_enabled
++
++    const-string v0, "feature_is_support_olive_slide_play"
++
++    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
++
++    move-result v1
++
++    if-nez v1, :cond_olive_enabled
++
++    const-string v0, "feature_is_support_video_extract_olive"
++
++    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
++
++    move-result v1
++
++    if-nez v1, :cond_olive_enabled
++
++    const-string v0, "feature_olive_slow_motion_recommend_popup_shown"
++
++    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
++
++    move-result v1
++
++    if-nez v1, :cond_olive_enabled
++
+     return p2
++
++    :cond_olive_enabled
++    const/4 v0, 0x1
++
++    return v0
+ .end method
+ 
+ .method public static synthetic d(ILjava/lang/String;Z)Z
+-- 
+2.53.0
+
