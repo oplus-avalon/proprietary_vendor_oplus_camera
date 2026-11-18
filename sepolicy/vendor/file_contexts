@@ -539,3 +539,4 @@
 # This is labeled as public_adsprpcd_file as it needs to be read by apps
 # (e.g. Google Camera App)
 /mnt/vendor/dsp/fastrpc_shell_3                                              u:object_r:public_adsprpcd_file:s0
+/mnt/occe(/.*)?                                                              u:object_r:mnt_occe_file:s0

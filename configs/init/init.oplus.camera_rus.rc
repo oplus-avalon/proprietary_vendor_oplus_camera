@@ -11,3 +11,6 @@
 on post-fs-data
     mkdir /data/system/camera_rus 0777 cameraserver cameraserver
     mkdir /data/vendor/camera_rus 0777 camera camera
+    mkdir /mnt/occe 0777 media_rw media_rw
+    mkdir /mnt/occe/shader 0777 media_rw media_rw
+    mkdir /mnt/occe/shader/fb_binary 0777 media_rw media_rw
