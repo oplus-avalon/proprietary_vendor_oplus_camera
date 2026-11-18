@@ -1,0 +1,13 @@
+# APS file storage for deferred-capture jobs.
+#
+# Stock OPlus ships these mkdirs in /system_ext/etc/init/init.oplus.rootdir.rc.
+# That stock script does many other things and isn't extracted into our tree, so we
+# ship just the camera-relevant subset here.
+#
+# Without these directories existing with the right ownership, APSFileStorage
+# (libAPSClient) can't persist defer-job parameters under /data/system, hits
+# 'keepJob "Not found in FileSystem"', the offline metadata collapses to empty,
+# and the OPlus capture path bails (-38 / process_capture_request failed).
+on post-fs-data
+    mkdir /data/system/camera_rus 0777 cameraserver cameraserver
+    mkdir /data/vendor/camera_rus 0777 camera camera
