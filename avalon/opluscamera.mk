@@ -4,7 +4,7 @@ LOCAL_PATH := vendor/oplus/camera/avalon
 PRODUCT_PACKAGES += \
     android.hardware.graphics.common-V3-ndk.vendor \
     CameraThemedIcon \
-    OnePlusGalleryTarget
+    GalleryThemedIcon
 
 # Framework
 # PRODUCT_BOOT_JARS += \
