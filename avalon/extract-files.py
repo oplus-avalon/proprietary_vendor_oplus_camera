@@ -84,6 +84,10 @@ blob_fixups = {
         .apktool_patch('patches-sdk'),
     'system_ext/priv-app/OppoGallery2/OppoGallery2.apk': blob_fixup()
         .apktool_patch('patches-gallery'),
+    'odm/lib64/sr_models.so': blob_fixup()
+        .fix_soname(),
+    'odm/lib64/sr_ref_models.so': blob_fixup()
+        .fix_soname(),
     'odm/etc/init/init.camera_process.rc': blob_fixup()
         .regex_replace(
             '''on post-fs-data

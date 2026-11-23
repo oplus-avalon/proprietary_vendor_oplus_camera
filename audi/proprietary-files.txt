@@ -194,3 +194,5 @@ system_ext/lib64/liboplusgui_jni.so
 
 system/lib64/libbase.so:system_ext/lib64/libbase-stock.so;FIX_SONAME
 system_ext/lib64/libsqlcipher.so
+odm/lib64/sr_models.bin:odm/lib64/sr_models.so;SYMLINK=odm/lib64/sr_models.bin
+odm/lib64/sr_ref_models.bin:odm/lib64/sr_ref_models.so;SYMLINK=odm/lib64/sr_ref_models.bin
