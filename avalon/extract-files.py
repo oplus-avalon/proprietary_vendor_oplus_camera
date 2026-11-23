@@ -115,8 +115,6 @@ on property:sys.camera.user.removed=*
 
 namespace_imports = [
     'vendor/oplus/camera/avalon/blobs',
-    'vendor/oneplus/avalon',
-    'vendor/oneplus/sm8650-common',
     'hardware/oplus',
 ]
 

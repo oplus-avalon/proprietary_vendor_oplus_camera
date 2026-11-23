@@ -111,8 +111,6 @@ on property:sys.camera.user.removed=*
 
 namespace_imports = [
     'vendor/oplus/camera/audi/blobs',
-    'vendor/oneplus/audi',
-    'vendor/oneplus/sm8650-common',
     'hardware/oplus',
 ]
 
