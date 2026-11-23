@@ -4,7 +4,7 @@ LOCAL_PATH := vendor/oplus/camera/audi
 PRODUCT_PACKAGES += \
     android.hardware.graphics.common-V3-ndk.vendor \
     CameraThemedIcon \
-    ColorOSGalleryTarget
+    ColorOSGalleryThemedIcon
 
 # Framework
 # PRODUCT_BOOT_JARS += \
